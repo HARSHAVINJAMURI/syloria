@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>SYLORIA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Cormorant+Garamond:wght@500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Outfit, sans-serif;
+            background: #050912;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 10%, rgba(254, 254, 255, 0.448), transparent 35%),
+                radial-gradient(circle at 80% 10%, rgba(255, 170, 0, 0.512), transparent 35%),
+                radial-gradient(circle at 20% 80%, rgba(128, 213, 255, 0.512), transparent 35%),
+                radial-gradient(circle at 80% 80%, rgba(245, 120, 182, 0.512), transparent 35%),
+                #050912;
+            z-index: -1;
+        }
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: "Cormorant Garamond";
+            font-size: 82px;
+            font-weight: 600;
+            letter-spacing: 8px;
+        }
+
+        .hero h3 {
+            margin-top: 18px;
+            font-weight: 300;
+            font-size: 24px;
+            color: #cfd8e3;
+        }
+
+        .hero p {
+            margin: 35px auto;
+            max-width: 720px;
+            line-height: 1.9;
+            font-size: 18px;
+            color: #9AA5B8;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 34px;
+            background: white;
+            color: #050912;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+        }
+
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about h2,
+        .gallery h2,
+        .contact h2 {
+            font-family: "Cormorant Garamond";
+            font-size: 56px;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .about p {
+            font-size: 18px;
+            line-height: 2;
+            color: #9AA5B8;
+        }
+
+        .grid {
+            margin-top: 70px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+        }
+
+        .card {
+            padding: 45px 30px;
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 22px;
+            transition: .35s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, .07);
+        }
+
+        .card h3 {
+            font-family: "Cormorant Garamond";
+            font-size: 34px;
+            margin-bottom: 18px;
+        }
+
+        .card p {
+            line-height: 1.8;
+            color: #A7B2C3;
+            margin-bottom: 30px;
+        }
+
+        .card a {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            background: white;
+            color: #050912;
+            font-weight: 600;
+        }
+
+        .soon {
+            opacity: .6;
+        }
+
+        .soon a {
+            pointer-events: none;
+            background: #293241;
+            color: #ddd;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            margin: 25px auto 45px;
+            max-width: 650px;
+            color: #9AA5B8;
+            line-height: 1.9;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .links a {
+            padding: 14px 28px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid rgba(255, 255, 255, .08);
+            color: white;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .links a:hover {
+            background: white;
+            color: #050912;
+        }
+
+        footer {
+            padding: 35px;
+            text-align: center;
+            color: #768396;
+            border-top: 1px solid rgba(255, 255, 255, .08);
+        }
+
+        @media(max-width:768px) {
+            .hero h1 {
+                font-size: 54px;
+            }
+
+            .hero h3 {
+                font-size: 20px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .about h2,
+            .gallery h2,
+            .contact h2 {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero">
+        <div>
+            <h1>SYLORIA</h1>
+            <h3>Where Every Frame Tells a Story</h3>
+            <p>
+                Welcome to <strong>SYLORIA</strong> — a curated collection of photographs,
+                artworks, and visual stories capturing nature, festivals, emotions,
+                culture, and timeless moments through the lens of creativity.
+            </p>
+            <a href="#gallery" class="btn">Explore Collections</a>
+        </div>
+    </section>
+    <section class="about">
+        <h2>About SYLORIA</h2>
+        <p>
+            SYLORIA is more than a gallery—it is a journey through light, colors,
+            memories, and emotions. Every collection represents a unique perspective,
+            bringing together artistic expression and photography into one immersive
+            experience.
+        </p>
+    </section>
+    <section class="gallery" id="gallery">
+        <h2>Collections</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Art Gallery</h3>
+                <p>Creative illustrations, digital artworks and hand-crafted visual stories.</p>
+                <a href="trilume.html">Open Gallery</a>
+            </div>
+            <div class="card">
+                <h3>Flower Gallery</h3>
+                <p>Capturing the elegance, colors and delicate beauty of blooming flowers.</p>
+                <a href="flower.html">Open Gallery</a>
+            </div>
+            <div class="card">
+                <h3>Diwali Collection</h3>
+                <p>A celebration of lights, traditions and unforgettable festive memories.</p>
+                <a href="diwali.html">Open Gallery</a>
+            </div>
+            <div class="card soon">
+                <h3>Sky Gallery</h3>
+                <p>Sunrises, sunsets, clouds, stars and breathtaking skies.</p>
+                <a>Coming Soon</a>
+            </div>
+            <div class="card soon">
+                <h3>Wildlife</h3>
+                <p>Animals, birds and nature captured in their purest moments.</p>
+                <a>Coming Soon</a>
+            </div>
+            <div class="card soon">
+                <h3>Locations</h3>
+                <p>Travel destinations, landscapes and hidden places around the world.</p>
+                <a>Coming Soon</a>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <h2>Let's Connect</h2>
+        <p>
+            Whether you'd like to collaborate, discuss photography, artwork,
+            or simply say hello, I'd love to hear from you.
+        </p>
+        <div class="links">
+            <a href="mailto:vinjamuriharsha123@gmail.com">
+                Email
+            </a>
+            <a href="https://www.instagram.com/im_harshhaa/" target="_blank">
+                Instagram
+            </a>
+            <a href="https://www.linkedin.com/in/harshavinjamuri/" target="_blank">
+                LinkedIn
+            </a>
+        </div>
+    </section>
+    <footer>
+        © 2026 SYLORIA • Crafted with passion by Vinjamuri Harsha
+    </footer>
+</body>
+
+</html>

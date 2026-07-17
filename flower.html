@@ -1,0 +1,962 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Cormorant+Garamond:wght@500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Outfit, sans-serif;
+            background: #050912;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 10%, rgba(86, 216, 4, 0.366), transparent 35%),
+                radial-gradient(circle at 80% 10%, rgba(193, 20, 20, 0.611), transparent 30%),
+                #050912;
+            z-index: -2;
+        }
+
+        header {
+            padding: 80px 30px 50px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: "Cormorant Garamond";
+            font-size: 68px;
+            letter-spacing: 5px;
+            font-weight: 500;
+        }
+
+        header p {
+            margin-top: 12px;
+            color: #97A2B5;
+            font-size: 17px;
+        }
+
+        .about {
+            padding: 120px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-container {
+            max-width: 900px;
+            text-align: justify;
+        }
+
+        .about-tag {
+            display: inline-block;
+            margin-bottom: 18px;
+            font-size: 13px;
+            letter-spacing: 5px;
+            color: #78EED0;
+        }
+
+        .about h2 {
+            font-family: "Cormorant Garamond";
+            font-size: 56px;
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: 30px;
+        }
+
+        .about p {
+            font-size: 18px;
+            line-height: 2;
+            color: #9AA5B8;
+            margin-bottom: 24px;
+        }
+
+        .about strong {
+            color: white;
+            font-weight: 500;
+        }
+
+        @media(max-width:768px) {
+            .about {
+                padding: 80px 25px;
+            }
+
+            .about h2 {
+                font-size: 40px;
+            }
+
+            .about p {
+                font-size: 16px;
+                line-height: 1.9;
+            }
+        }
+
+        /* Gallery */
+        .gallery {
+            max-width: 1450px;
+            margin: auto;
+            columns: 4 300px;
+            column-gap: 18px;
+            padding: 20px 30px 80px;
+        }
+
+        .card {
+            break-inside: avoid;
+            margin-bottom: 18px;
+            border-radius: 18px;
+            overflow: hidden;
+            background: #111827;
+            cursor: pointer;
+            transition: .35s;
+        }
+
+        .card img {
+            width: 100%;
+            display: block;
+            transition: .5s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        .card:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .93);
+            backdrop-filter: blur(12px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 16px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, .4);
+        }
+
+        .close {
+            position: absolute;
+            top: 25px;
+            right: 40px;
+            font-size: 42px;
+            cursor: pointer;
+        }
+
+        #downloadBtn {
+            position: absolute;
+            left: 35px;
+            top: 30px;
+            padding: 12px 22px;
+            border-radius: 30px;
+            background: white;
+            color: black;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        @media(max-width:900px) {
+            header h1 {
+                font-size: 48px;
+            }
+
+            .gallery {
+                columns: 2 250px;
+            }
+        }
+
+        @media(max-width:600px) {
+            .gallery {
+                columns: 1;
+            }
+        }
+
+        .contact {
+            padding: 140px 20px;
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact-tag {
+            display: inline-block;
+            letter-spacing: 5px;
+            font-size: 12px;
+            color: #7AE8C8;
+            margin-bottom: 25px;
+        }
+
+        .contact h2 {
+            font-family: "Cormorant Garamond";
+            font-size: 62px;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .contact p {
+            max-width: 650px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.9;
+            color: #9AA5B8;
+            margin-bottom: 60px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .contact-links a {
+            padding: 14px 26px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, .08);
+            background: rgba(255, 255, 255, .03);
+            transition: .35s;
+            font-size: 15px;
+        }
+
+        .contact-links a:hover {
+            background: #6EFAD7;
+            color: #050912;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(110, 250, 215, .25);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>FLOWER COLLECTION</h1>
+        <p>Not just flowers — moments of wonder captured through my eyes. </p>
+        <section class="about">
+            <div class="about-container">
+                <span class="about-tag">
+                    ABOUT THE GALLERY
+                </span>
+                <h3>
+                    Nature never rushes, yet everything blooms perfectly.
+                </h3>
+                <p>
+                    I have always been fascinated by the quiet beauty of nature.
+                    What many people pass by, I pause to admire — the colors of a flower, the tiny details of petals,
+                    the calm hidden in natural moments.
+                    Through my lens, I try to capture not just flowers, but emotions, silence, beauty, and perspective.
+                    Every photograph here reflects how I see nature — soft, alive, peaceful, and endlessly beautiful.
+                </p>
+                <p>
+                    This space is a collection of moments that made me stop and wonder.
+                    If these flowers make you pause, smile, or feel connected to nature even for a moment, then this
+                    journey is worth sharing.
+                </p>
+            </div>
+        </section>
+    </header>
+    <div class="gallery" id="gallery"></div>
+    <div class="lightbox" id="lightbox">
+        <span class="close">&times;</span>
+        <a id="downloadBtn" download target="_blank">
+            ⬇ Download
+        </a>
+        <img id="preview">
+    </div>
+    <section class="contact">
+        <h2>Let's Connect</h2>
+        <p>
+            Whether you'd like to collaborate, inquire about prints,
+            or simply share your thoughts, I'd love to hear from you.
+        </p>
+        <div class="contact-links">
+            <a href="https://www.instagram.com/im_harshhaa/" target="_blank">
+                Instagram
+            </a>
+            <a href="mailto:vinjamuriharsha123@gmail.com">
+                Email
+            </a>
+            <a href="https://www.linkedin.com/in/harshavinjamuri/" target="_blank">
+                LinkedIn
+            </a>
+        </div>
+    </section>
+    <script>
+        const CLOUD_NAME = "dk7gnvr8h";
+        const FOLDER = "art";
+        const images = [
+            "IMG_20210601_133618_r3egdx",
+            "IMG_4997_k4hhlq",
+            "IMG_4664_y40zcw",
+            "IMG_4662_oaid68",
+            "IMG_4998_vpmxax",
+            "IMG_4861_umbhbu",
+            "IMG_4862_na7n74",
+            "IMG-20250305-WA0017_lopdrd",
+            "IMG_4863_im8zi9",
+            "IMG-20250305-WA0018_fq5kp8",
+            "IMG_4864_rpgcem",
+            "IMG_4865_pooc0k",
+            "IMG_4990_pmqt5l",
+            "IMG_4995_bz5azr",
+            "IMG_4991_ghaxmn",
+            "IMG_4995_bz5azr",
+            "IMG20220615102027_zexazw",
+            "IMG20220615102923_zu07vg",
+            "IMG20220805093703_u0gwni",
+            "IMG20220805094200_kzpjpj",
+            "IMG20220805094542_dzue7o",
+            "IMG20221008101955_ze2jaq",
+            "IMG20221008102026_cwvytf",
+            "IMG20220805094808_wofrba",
+            "IMG20221008102036_j8j8gc",
+            // "IMG20221113115502",_udphhg",
+            "IMG20230114113048_cvawww",
+            "IMG20221221080818_yvj9ce",
+            "IMG20230504174056_yrapgh",
+            "IMG20230504174503_fbcooo",
+            "IMG20230512104847_fv4kuo",
+            "IMG20221221080832_y1nzct",
+            "IMG20230514092044_mjtr8h",
+            "IMG20230514093550_b6ds4n",
+            "IMG20230531075124_z5drca",
+            "IMG20230601083238_fqfsj0",
+            "IMG20230601083223_l24jxb",
+            "IMG20230514093728_yaae6t",
+            "IMG20230708071155_li899t",
+            "IMG20230601101448_upkx4z",
+            "IMG20230601083733_twvizb",
+            "IMG20230721175054-EFFECTS-edited_qy1pip",
+            "IMG20230918123026_nyvwcn",
+            "IMG20231026171453_nl4czt",
+            "IMG20231026171421_hscji1",
+            "IMG20231029133251_tt3jmg",
+            "IMG20231029153944_ccyk8q",
+            "IMG20231108165107_justh1",
+            "IMG20231029153946_yo6jqq",
+            "IMG20240316093436_yfphoj",
+            "IMG20240515172416_sybapg",
+            "IMG20240429072713_yfq1gd",
+            "IMG20240515172426_zlwqbl",
+            "IMG20240515172453_kwnjv0",
+            "IMG20240515172634_vsx8bt",
+            "IMG20240516072922_h11y0a",
+            "IMG20240607175840_km6eel",
+            "IMG20241231104139_qtsyiy",
+            "IMG20240609171946_ehefgh",
+            "IMG20250414062129_if8xjy",
+            "IMG20250414062149_oggx9k",
+            "IMG20250414062353_ixfhtb",
+            "IMG20250507095521_clekml",
+            "IMG20250507095545_yqnx7u",
+            "IMG20250507095530_fyuyfg",
+            "IMG20250706144904_w9dmkr",
+            "IMG20250706144722_suopwi",
+            "IMG20250823073313_maijfq",
+            "IMG20250823073324_oabdpk",
+            "IMG20250706144923_nrohu9",
+            "IMG20250823073339_ybb9bq",
+            "IMG20250823081418_qjunyi",
+            "IMG20250824081719_vkggab",
+            "IMG20250824171900_w4ygnq",
+            "IMG20250824081751_bkcae8",
+            "IMG20250824171924_cwmgou",
+            "IMG20250824171948_hh0ijw",
+            "IMG20251025070343_jzg9u5",
+            "IMG20260614094104_criuvz",
+            "IMG20260614094149_adxjrx",
+            "IMG20260614094543_otjfwu",
+            "IMG20260614094907_et4az5",
+            "IMG20260614095415_gwwlbz",
+            "IMG20260614095626_j50scl",
+            "IMG20260614101626_aayl1j",
+            "IMG20260614101027_ca0xra",
+            "IMG20260614101559_arvlk6",
+            "IMG20260614103539_dk7hd4",
+            "IMG20260614103513_iyrhpz",
+            "IMG20260614103631_jfvunq",
+            "IMG20260614103649_rwqjs8",
+            "IMG20260614103613_bmhizj",
+            "IMG20260614103521_cgjptv",
+            "IMG20260614103732_znxnkh",
+            "IMG20220611092952_yq4ja0",
+        ];
+        const gallery = document.getElementById("gallery");
+        const lightbox = document.getElementById("lightbox");
+        const preview = document.getElementById("preview");
+        const downloadBtn = document.getElementById("downloadBtn");
+        /* ---------- URL ---------- */
+        function url(id) {
+            return `https://res.cloudinary.com/dk7gnvr8h/image/upload/${id}.jpg`;
+        }
+        /* ---------- Gallery ---------- */
+        images.forEach(id => {
+            const card = document.createElement("div");
+            card.className = "card";
+            const img = document.createElement("img");
+            img.loading = "lazy";
+            img.alt = id;
+            img.style.opacity = "0";
+            img.style.transition = ".35s";
+            img.src = url(id);
+            img.onload = () => {
+                img.style.opacity = "1";
+            };
+            img.onerror = () => {
+                console.log("Missing:", id);
+                card.remove();
+            };
+            card.appendChild(img);
+            card.addEventListener("click", () => {
+                openViewer(img.src);
+            });
+            gallery.appendChild(card);
+        });
+        /* ---------- Viewer ---------- */
+        function openViewer(src) {
+            preview.src = src;
+            downloadBtn.href = src;
+            lightbox.classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+        /* ---------- Close ---------- */
+        function closeViewer() {
+            lightbox.classList.remove("active");
+            document.body.style.overflow = "auto";
+        }
+        document.querySelector(".close").onclick = closeViewer;
+        lightbox.onclick = (e) => {
+            if (e.target === lightbox) {
+                closeViewer();
+            }
+        };
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                closeViewer();
+            }
+        });
+    </script>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Cormorant+Garamond:wght@500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Outfit, sans-serif;
+            background: #050912;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 10%, rgba(86, 216, 4, 0.366), transparent 35%),
+                radial-gradient(circle at 80% 10%, rgba(193, 20, 20, 0.611), transparent 30%),
+                #050912;
+            z-index: -2;
+        }
+
+        header {
+            padding: 80px 30px 50px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: "Cormorant Garamond";
+            font-size: 68px;
+            letter-spacing: 5px;
+            font-weight: 500;
+        }
+
+        header p {
+            margin-top: 12px;
+            color: #97A2B5;
+            font-size: 17px;
+        }
+
+        .about {
+            padding: 120px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-container {
+            max-width: 900px;
+            text-align: justify;
+        }
+
+        .about-tag {
+            display: inline-block;
+            margin-bottom: 18px;
+            font-size: 13px;
+            letter-spacing: 5px;
+            color: #78EED0;
+        }
+
+        .about h2 {
+            font-family: "Cormorant Garamond";
+            font-size: 56px;
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: 30px;
+        }
+
+        .about p {
+            font-size: 18px;
+            line-height: 2;
+            color: #9AA5B8;
+            margin-bottom: 24px;
+        }
+
+        .about strong {
+            color: white;
+            font-weight: 500;
+        }
+
+        @media(max-width:768px) {
+            .about {
+                padding: 80px 25px;
+            }
+
+            .about h2 {
+                font-size: 40px;
+            }
+
+            .about p {
+                font-size: 16px;
+                line-height: 1.9;
+            }
+        }
+
+        /* Gallery */
+        .gallery {
+            max-width: 1450px;
+            margin: auto;
+            columns: 4 300px;
+            column-gap: 18px;
+            padding: 20px 30px 80px;
+        }
+
+        .card {
+            break-inside: avoid;
+            margin-bottom: 18px;
+            border-radius: 18px;
+            overflow: hidden;
+            background: #111827;
+            cursor: pointer;
+            transition: .35s;
+        }
+
+        .card img {
+            width: 100%;
+            display: block;
+            transition: .5s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        .card:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .93);
+            backdrop-filter: blur(12px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 16px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, .4);
+        }
+
+        .close {
+            position: absolute;
+            top: 25px;
+            right: 40px;
+            font-size: 42px;
+            cursor: pointer;
+        }
+
+        #downloadBtn {
+            position: absolute;
+            left: 35px;
+            top: 30px;
+            padding: 12px 22px;
+            border-radius: 30px;
+            background: white;
+            color: black;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        @media(max-width:900px) {
+            header h1 {
+                font-size: 48px;
+            }
+
+            .gallery {
+                columns: 2 250px;
+            }
+        }
+
+        @media(max-width:600px) {
+            .gallery {
+                columns: 1;
+            }
+        }
+
+        .contact {
+            padding: 140px 20px;
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact-tag {
+            display: inline-block;
+            letter-spacing: 5px;
+            font-size: 12px;
+            color: #7AE8C8;
+            margin-bottom: 25px;
+        }
+
+        .contact h2 {
+            font-family: "Cormorant Garamond";
+            font-size: 62px;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .contact p {
+            max-width: 650px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.9;
+            color: #9AA5B8;
+            margin-bottom: 60px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .contact-links a {
+            padding: 14px 26px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, .08);
+            background: rgba(255, 255, 255, .03);
+            transition: .35s;
+            font-size: 15px;
+        }
+
+        .contact-links a:hover {
+            background: #6EFAD7;
+            color: #050912;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(110, 250, 215, .25);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>FLOWER COLLECTION</h1>
+        <p>Not just flowers — moments of wonder captured through my eyes. </p>
+        <section class="about">
+            <div class="about-container">
+                <span class="about-tag">
+                    ABOUT THE GALLERY
+                </span>
+                <h3>
+                    Nature never rushes, yet everything blooms perfectly.
+                </h3>
+                <p>
+                    I have always been fascinated by the quiet beauty of nature.
+                    What many people pass by, I pause to admire — the colors of a flower, the tiny details of petals,
+                    the calm hidden in natural moments.
+                    Through my lens, I try to capture not just flowers, but emotions, silence, beauty, and perspective.
+                    Every photograph here reflects how I see nature — soft, alive, peaceful, and endlessly beautiful.
+                </p>
+                <p>
+                    This space is a collection of moments that made me stop and wonder.
+                    If these flowers make you pause, smile, or feel connected to nature even for a moment, then this
+                    journey is worth sharing.
+                </p>
+                <!-- <p>Welcome to T ART GALLERY, a place where imagination meets craftsmanship. Every drawing is created with patience, passion, and attention to detail, transforming simple ideas into meaningful works of art. From expressive portraits and intricate sketches to colorful illustrations, each piece reflects a unique artistic journey. Explore, discover, and experience the stories hidden within every stroke.</p> -->
+            </div>
+        </section>
+    </header>
+    <div class="gallery" id="gallery"></div>
+    <div class="lightbox" id="lightbox">
+        <span class="close">&times;</span>
+        <a id="downloadBtn" download target="_blank">
+            ⬇ Download
+        </a>
+        <img id="preview">
+    </div>
+    <section class="contact">
+        <h2>Let's Connect</h2>
+        <p>
+            Whether you'd like to collaborate, inquire about prints,
+            or simply share your thoughts, I'd love to hear from you.
+        </p>
+        <div class="contact-links">
+            <a href="https://www.instagram.com/im_harshhaa/" target="_blank">
+                Instagram
+            </a>
+            <a href="mailto:vinjamuriharsha123@gmail.com">
+                Email
+            </a>
+            <a href="https://www.linkedin.com/in/harshavinjamuri/" target="_blank">
+                LinkedIn
+            </a>
+        </div>
+    </section>
+    <script>
+        const CLOUD_NAME = "dk7gnvr8h";
+        const FOLDER = "art";
+        const images = [
+            "IMG_20210601_133618_r3egdx",
+            "IMG_4997_k4hhlq",
+            "IMG_4664_y40zcw",
+            "IMG_4662_oaid68",
+            "IMG_4998_vpmxax",
+            "IMG_4861_umbhbu",
+            "IMG_4862_na7n74",
+            "IMG-20250305-WA0017_lopdrd",
+            "IMG_4863_im8zi9",
+            "IMG-20250305-WA0018_fq5kp8",
+            "IMG_4864_rpgcem",
+            "IMG_4865_pooc0k",
+            "IMG_4990_pmqt5l",
+            "IMG_4995_bz5azr",
+            "IMG_4991_ghaxmn",
+            "IMG_4995_bz5azr",
+            "IMG20220615102027_zexazw",
+            "IMG20220615102923_zu07vg",
+            "IMG20220805093703_u0gwni",
+            "IMG20220805094200_kzpjpj",
+            "IMG20220805094542_dzue7o",
+            "IMG20221008101955_ze2jaq",
+            "IMG20221008102026_cwvytf",
+            "IMG20220805094808_wofrba",
+            "IMG20221008102036_j8j8gc",
+            // "IMG20221113115502",_udphhg",
+            "IMG20230114113048_cvawww",
+            "IMG20221221080818_yvj9ce",
+            "IMG20230504174056_yrapgh",
+            "IMG20230504174503_fbcooo",
+            "IMG20230512104847_fv4kuo",
+            "IMG20221221080832_y1nzct",
+            "IMG20230514092044_mjtr8h",
+            "IMG20230514093550_b6ds4n",
+            "IMG20230531075124_z5drca",
+            "IMG20230601083238_fqfsj0",
+            "IMG20230601083223_l24jxb",
+            "IMG20230514093728_yaae6t",
+            "IMG20230708071155_li899t",
+            "IMG20230601101448_upkx4z",
+            "IMG20230601083733_twvizb",
+            "IMG20230721175054-EFFECTS-edited_qy1pip",
+            "IMG20230918123026_nyvwcn",
+            "IMG20231026171453_nl4czt",
+            "IMG20231026171421_hscji1",
+            "IMG20231029133251_tt3jmg",
+            "IMG20231029153944_ccyk8q",
+            "IMG20231108165107_justh1",
+            "IMG20231029153946_yo6jqq",
+            "IMG20240316093436_yfphoj",
+            "IMG20240515172416_sybapg",
+            "IMG20240429072713_yfq1gd",
+            "IMG20240515172426_zlwqbl",
+            "IMG20240515172453_kwnjv0",
+            "IMG20240515172634_vsx8bt",
+            "IMG20240516072922_h11y0a",
+            "IMG20240607175840_km6eel",
+            "IMG20241231104139_qtsyiy",
+            "IMG20240609171946_ehefgh",
+            "IMG20250414062129_if8xjy",
+            "IMG20250414062149_oggx9k",
+            "IMG20250414062353_ixfhtb",
+            "IMG20250507095521_clekml",
+            "IMG20250507095545_yqnx7u",
+            "IMG20250507095530_fyuyfg",
+            "IMG20250706144904_w9dmkr",
+            "IMG20250706144722_suopwi",
+            "IMG20250823073313_maijfq",
+            "IMG20250823073324_oabdpk",
+            "IMG20250706144923_nrohu9",
+            "IMG20250823073339_ybb9bq",
+            "IMG20250823081418_qjunyi",
+            "IMG20250824081719_vkggab",
+            "IMG20250824171900_w4ygnq",
+            "IMG20250824081751_bkcae8",
+            "IMG20250824171924_cwmgou",
+            "IMG20250824171948_hh0ijw",
+            "IMG20251025070343_jzg9u5",
+            "IMG20260614094104_criuvz",
+            "IMG20260614094149_adxjrx",
+            "IMG20260614094543_otjfwu",
+            "IMG20260614094907_et4az5",
+            "IMG20260614095415_gwwlbz",
+            "IMG20260614095626_j50scl",
+            "IMG20260614101626_aayl1j",
+            "IMG20260614101027_ca0xra",
+            "IMG20260614101559_arvlk6",
+            "IMG20260614103539_dk7hd4",
+            "IMG20260614103513_iyrhpz",
+            "IMG20260614103631_jfvunq",
+            "IMG20260614103649_rwqjs8",
+            "IMG20260614103613_bmhizj",
+            "IMG20260614103521_cgjptv",
+            "IMG20260614103732_znxnkh",
+            "IMG20220611092952_yq4ja0",
+        ];
+        const gallery = document.getElementById("gallery");
+const lightbox = document.getElementById("lightbox");
+const preview = document.getElementById("preview");
+const downloadBtn = document.getElementById("downloadBtn");
+
+let current = 0;
+
+function url(id) {
+    return `https://res.cloudinary.com/dk7gnvr8h/image/upload/${id}.jpg`;
+}
+
+images.forEach((id, i) => {
+
+    const card = document.createElement("div");
+    card.className = "card";
+
+    const img = new Image();
+    img.loading = "lazy";
+    img.src = url(id);
+
+    img.onload = () => img.style.opacity = 1;
+    img.onerror = () => card.remove();
+
+    card.appendChild(img);
+
+    card.onclick = () => open(i);
+
+    gallery.appendChild(card);
+
+});
+
+function open(i) {
+    current = i;
+    show();
+    lightbox.classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+function show() {
+    const src = url(images[current]);
+    preview.src = src;
+    downloadBtn.href = src;
+}
+
+function closeViewer() {
+    lightbox.classList.remove("active");
+    document.body.style.overflow = "";
+}
+
+function next() {
+    current = (current + 1) % images.length;
+    show();
+}
+
+function prev() {
+    current = (current - 1 + images.length) % images.length;
+    show();
+}
+
+document.querySelector(".close").onclick = closeViewer;
+
+lightbox.onclick = e => {
+    if (e.target === lightbox) closeViewer();
+};
+
+document.addEventListener("keydown", e => {
+
+    if (!lightbox.classList.contains("active")) return;
+
+    if (e.key === "ArrowRight") next();
+    else if (e.key === "ArrowLeft") prev();
+    else if (e.key === "Escape") closeViewer();
+
+});
+    </script>
+</body>
+
+</html>
