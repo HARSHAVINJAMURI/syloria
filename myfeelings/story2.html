@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spoken by Love | My Feelings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Outfit", sans-serif;
+            background: #090b10;
+            color: #f5f5f5;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(255, 192, 120, .08), transparent 30%),
+                radial-gradient(circle at 85% 10%, rgba(255, 255, 255, .05), transparent 40%),
+                radial-gradient(circle at 50% 100%, rgba(255, 215, 150, .04), transparent 40%),
+                #090b10;
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image:
+                radial-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px);
+            background-size: 6px 6px;
+            opacity: .35;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container {
+            width: min(1200px, 92%);
+            margin: 80px auto 120px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .title h1 {
+            font-family: "Cinzel Decorative", serif;
+            font-size: 58px;
+            color: #ffe3ab;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .title h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 30px;
+            font-style: italic;
+            font-weight: 400;
+            color: #d9d9d9;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 50px;
+            align-items: center;
+            margin: 60px 0;
+        }
+
+        .poem-card {
+            background: rgba(255, 255, 255, .03);
+            border: 1px solid rgba(255, 255, 255, .08);
+            backdrop-filter: blur(14px);
+            border-radius: 24px;
+            padding: 45px;
+            transition: .35s;
+        }
+
+        .poem-card:hover {
+            border-color: #f3c96f;
+            transform: translateY(-8px);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, .35);
+        }
+
+        .poem {
+            font-size: 25px;
+            line-height: 2.1;
+            color: #ffe8c5;
+            font-family: "Cormorant Garamond", serif;
+            white-space: pre-line;
+        }
+
+        .cover {
+            overflow: hidden;
+            border-radius: 24px;
+            transition: .4s;
+        }
+
+        .cover img {
+            width: 100%;
+            display: block;
+            transition: .5s;
+        }
+
+        .cover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, .4);
+        }
+
+        .cover:hover img {
+            transform: scale(1.05);
+        }
+
+        .story {
+            margin-top: 50px;
+            background: rgba(255, 255, 255, .03);
+            border: 1px solid rgba(255, 255, 255, .08);
+            backdrop-filter: blur(14px);
+            border-radius: 24px;
+            padding: 55px;
+            transition: .35s;
+        }
+
+        .story:hover {
+            border-color: #f3c96f;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, .35);
+        }
+
+        .story-image {
+            margin-bottom: 40px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .story-image img {
+            width: 100%;
+            display: block;
+            transition: .45s;
+        }
+
+        .story-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .story p {
+            font-size: 19px;
+            line-height: 2.1;
+            color: #e5e5e5;
+            margin-bottom: 28px;
+            text-align: justify;
+        }
+
+        .highlight {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 30px;
+            line-height: 1.9;
+            color: #ffd98d;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .home {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            padding: 14px 28px;
+            background: #f3c96f;
+            color: #111;
+            text-decoration: none;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: .35s;
+            box-shadow: 0 10px 30px rgba(243, 201, 111, .25);
+        }
+
+        .home:hover {
+            background: white;
+            transform: translateY(-5px);
+        }
+
+        @media(max-width:900px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .cover {
+                max-width: 500px;
+                margin: auto;
+            }
+
+            .story {
+                padding: 35px;
+            }
+
+            .title h1 {
+                font-size: 42px;
+            }
+
+            .title h3 {
+                font-size: 24px;
+            }
+
+            .poem {
+                font-size: 21px;
+            }
+
+            .story p {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Spoken by Love</h1>
+            <h3>Love That Shines Beyond Time.</h3>
+        </div>
+        <div class="hero">
+            <div class="poem-card">
+                <div class="poem">
+                    నీ కళ్లలోని ముత్యపు కాంతిలా
+                    నీ మాటలోని మధుర గాంతిలా
+                    చందమామ వెలుగులో లైలా లా నువ్వు
+                    మజ్నూన్ గుండెలో గానం అయినావు…
+                    <br>
+                    వజ్రం లాంటి నీ చూపుల వెలుగే
+                    వెలుగుల వెన్నెల్లో వదిలిన కలలే
+                    ముత్యాల వర్షమై హృదయాన్ని తడిపే
+                    ప్రేమగీతం లా శాశ్వతమై నిలిచే…
+                    <br>
+                    కలలో నిన్ను చూసిన వేళ,
+                    కలతలన్నీ కరిగిన వేళ
+                    కలువలాగా విరిసిన
+                    నా మనసు మురిసిన వేళ
+                    విరిసిన పువ్వులా
+                    మురిసిన నవ్వుల
+                    ప్రతి మాటలో అమృత ధారలు…
+                    ప్రతి చూపులో ప్రేమ జలపాతాలు…
+                </div>
+            </div>
+            <div class="cover">
+                <img src="image2.png" alt="Spoken by Love">
+            </div>
+        </div>
+        <div class="story">
+            <div class="story-image">
+                <img src="image1.jpg" alt="Love">
+            </div>
+            <div class="highlight">
+                Love is not merely seen.<br>
+                It is spoken through eyes, smiles, silence, and every heartbeat.
+            </div>
+            <p>
+               Celebrates the beauty of a beloved woman, comparing her with moonlight, pearls, diamonds, and stars.
+Her grace is like lovely attraction hidden in beauty.
+Her smile is like a river, the calm and limitless.
+Love is Potrayed as an endless and longing-filled Laila–Majnu story.
+Every look she gives and every word she says fills the heart with love.
+            </p>
+        </div>
+    </div>
+    <a href="index.html" class="home">
+        ← Home
+    </a>
+</body>
+
+</html>

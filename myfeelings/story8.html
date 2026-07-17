@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="te">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>మిగిలిన మాటలు... | My Feelings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:wght@400;500;700&family=Noto+Sans+Telugu:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0b0b10;
+            font-family: 'Outfit', sans-serif;
+            color: #f5f5f5;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(circle at 10% 10%, rgba(255, 120, 120, .08), transparent 28%),
+                radial-gradient(circle at 85% 15%, rgba(255, 208, 120, .08), transparent 35%),
+                radial-gradient(circle at 50% 100%, rgba(255, 255, 255, .03), transparent 40%),
+                #0b0b10;
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px);
+            background-size: 6px 6px;
+            opacity: .35;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container {
+            width: min(1250px, 94%);
+            margin: 70px auto 120px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        header h1 {
+            font-family: "Cinzel Decorative", serif;
+            font-size: 54px;
+            color: #ffe5aa;
+            margin-bottom: 15px;
+        }
+
+        header h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 28px;
+            font-style: italic;
+            font-weight: 400;
+            color: #dadada;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, .03);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 25px;
+            backdrop-filter: blur(18px);
+            padding: 50px;
+            transition: .35s;
+        }
+
+        .card:hover {
+            border-color: #ffb96a;
+            box-shadow: 0 20px 80px rgba(0, 0, 0, .35);
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .poem {
+            font-family: "Noto Sans Telugu", sans-serif;
+            font-size: 27px;
+            line-height: 2.25;
+        }
+
+        .poem p {
+            margin-bottom: 35px;
+        }
+
+        .image img {
+            width: 100%;
+            border-radius: 22px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, .45);
+            transition: .45s;
+        }
+
+        .image img:hover {
+            transform: scale(1.03);
+        }
+
+        .gold {
+            color: #ffd166;
+            font-weight: 600;
+        }
+
+        .orange {
+            color: #ffbf69;
+            font-weight: 600;
+        }
+
+        .pink {
+            color: #ff97b8;
+            font-weight: 600;
+        }
+
+        .blue {
+            color: #8fd3ff;
+            font-weight: 600;
+        }
+
+        .red {
+            color: #ff7d7d;
+            font-weight: 600;
+        }
+
+        .home {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            background: #ffbf69;
+            color: #111;
+            padding: 14px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: .35s;
+        }
+
+        .home:hover {
+            background: white;
+            transform: translateY(-5px);
+        }
+
+        @media(max-width:900px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .image {
+                order: -1;
+            }
+
+            .poem {
+                font-size: 22px;
+            }
+
+            header h1 {
+                font-size: 42px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>మిగిలిన మాటలు...</h1>
+            <h3>చూపుల వెనుక దాగిన భావాలు... మౌనంలో మిగిలిన ప్రేమ.</h3>
+        </header>
+        <div class="card">
+            <div class="content">
+                <div class="poem">
+                    <p>
+                        <strong>
+                            మిగిలిన మాటలు...<br>
+                            చూపుల వెనుక, మౌన పక్షంలో, అడుగుల మధ్య,<br>
+                            నిలిచిన క్షణమై...
+                        </strong>
+                    </p>
+                    <p>
+                        కాలం మరచిన <span class="gold">కవితనై</span>,<br>
+                        చెదరని అడుగుల <span class="orange">జాడనై</span>,<br>
+                        వేకువ తడిసిన <span class="blue">మంచునై</span>,<br>
+                        అందని ఆకాశపు <span class="pink">అంచునై</span>,<br>
+                        నాలో నేనే చదివే <span class="gold">కథనై</span>,<br>
+                        పలికే <span class="orange">స్వరమై</span>,<br>
+                        రాసిన <span class="blue">పద్యమై</span>,<br>
+                        దాచిన <span class="pink">అర్థమై</span>...
+                        <i>నే వేచి ఉండగా...</i>
+                    </p>
+                    <p>
+                        <strong>
+                            గాలిలా వచ్చి,<br>
+                            మేఘమై తేలి,<br>
+                            చినుకులా జారి,<br>
+                            వెలుగులా తాకి,<br>
+                            నీడలా నడిచి,<br>
+                            వేకువై విరిగి,<br>
+                            దారిలా మారి,<br>
+                            గమ్యమై నిలిచి...
+                        </strong>
+                    </p>
+                    <p>
+                        సంధ్యలో కరిగిన <span class="gold">వర్ణమై</span>,<br>
+                        మనసు దాచిన <span class="orange">లోకమై</span>,<br>
+                        ఊపిరి తాకిన <span class="blue">రాగమై</span>,<br>
+                        చూపులు చేరని <span class="pink">దూరమై</span>,<br>
+                        వెన్నెల నేసిన <span class="gold">దారమై</span>,<br>
+                        మౌనం అల్లిన <span class="orange">భావమై</span>,<br>
+                        నిదుర దాటిన <span class="blue">స్వప్నమై</span>,<br><br>
+                        <strong>
+                            <span class="red">నాలో నీవై మిగిలావు...</span>
+                        </strong>
+                        <br><br>
+                    <div style="text-align:right;font-size:34px;">
+                        <span class="gold">నా</span>
+                        &nbsp;
+                        <span class="pink">మనోరంజని</span>
+                    </div>
+                    </p>
+                </div>
+                <div class="image">
+                    <img src="image8.png" alt="మిగిలిన మాటలు">
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="index.html" class="home">
+        ← Home
+    </a>
+</body>
+
+</html>

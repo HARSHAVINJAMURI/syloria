@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Unwritten Destinies | My Feelings</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+
+            font-family: "Outfit", sans-serif;
+            background: #0b0d12;
+            color: #f5f5f5;
+            overflow-x: hidden;
+            position: relative;
+
+        }
+
+        body::before {
+
+            content: "";
+            position: fixed;
+            inset: 0;
+
+            background:
+                radial-gradient(circle at 20% 20%, rgba(255, 193, 7, .08), transparent 30%),
+                radial-gradient(circle at 80% 0%, rgba(92, 130, 255, .08), transparent 35%),
+                radial-gradient(circle at 50% 100%, rgba(255, 255, 255, .03), transparent 45%),
+                #0b0d12;
+
+            z-index: -2;
+
+        }
+
+        body::after {
+
+            content: "";
+            position: fixed;
+            inset: 0;
+
+            background-image:
+                radial-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px);
+
+            background-size: 6px 6px;
+
+            opacity: .3;
+
+            z-index: -1;
+
+            pointer-events: none;
+
+        }
+
+        .container {
+
+            width: min(900px, 92%);
+            margin: 80px auto 120px;
+
+        }
+
+        .title {
+
+            text-align: center;
+
+            margin-bottom: 20px;
+
+        }
+
+        .title h1 {
+
+            font-family: "Cinzel Decorative", serif;
+
+            font-size: 60px;
+
+            color: #ffe7b5;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 15px;
+
+        }
+
+        .title h3 {
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 28px;
+
+            font-weight: 400;
+
+            color: #d8d8d8;
+
+            font-style: italic;
+
+        }
+
+        .cover {
+
+            margin: 50px auto;
+
+            width: 100%;
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            transition: .45s;
+
+        }
+
+        .cover img {
+
+            width: 100%;
+
+            display: block;
+
+            transition: .5s;
+
+        }
+
+        .cover:hover {
+
+            transform: translateY(-10px);
+
+            box-shadow: 0 25px 70px rgba(0, 0, 0, .45);
+
+        }
+
+        .cover:hover img {
+
+            transform: scale(1.03);
+
+        }
+
+        .description {
+
+            text-align: center;
+
+            max-width: 760px;
+
+            margin: auto;
+
+            font-size: 22px;
+
+            line-height: 1.8;
+
+            color: #f2deb2;
+
+            font-style: italic;
+
+            margin-bottom: 50px;
+
+        }
+
+        .story {
+
+            background: rgba(255, 255, 255, .03);
+
+            backdrop-filter: blur(16px);
+
+            border: 1px solid rgba(255, 255, 255, .08);
+
+            border-radius: 26px;
+
+            padding: 55px;
+
+            transition: .4s;
+
+        }
+
+        .story:hover {
+
+            border-color: #f4c96d;
+
+            box-shadow: 0 25px 80px rgba(0, 0, 0, .35);
+
+        }
+
+        .meta {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-bottom: 40px;
+
+            color: #b9c0cf;
+
+        }
+
+        .story p {
+
+            font-size: 19px;
+
+            line-height: 2.2;
+
+            color: #e4e4e4;
+
+            margin-bottom: 28px;
+
+            text-align: justify;
+
+        }
+
+        .quote {
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 30px;
+
+            color: #ffd98b;
+
+            text-align: center;
+
+            margin: 50px 0;
+
+            font-style: italic;
+
+        }
+
+        .poem {
+
+            text-align: center;
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 28px;
+
+            color: #ffe2a3;
+
+            line-height: 1.8;
+
+            margin: 40px 0;
+
+        }
+
+        .telugu {
+
+            text-align: center;
+
+            font-size: 22px;
+
+            color: #f8d17a;
+
+            margin: 35px 0;
+
+            font-weight: 500;
+
+        }
+
+        .signature {
+
+            text-align: right;
+
+            margin-top: 50px;
+
+            font-size: 18px;
+
+            color: #bfbfbf;
+
+        }
+
+        .home {
+
+            position: fixed;
+
+            bottom: 25px;
+
+            right: 25px;
+
+            text-decoration: none;
+
+            padding: 14px 28px;
+
+            border-radius: 50px;
+
+            background: #f4c96d;
+
+            color: #111;
+
+            font-weight: 600;
+
+            transition: .35s;
+
+            box-shadow: 0 10px 30px rgba(244, 201, 109, .25);
+
+        }
+
+        .home:hover {
+
+            transform: translateY(-5px);
+
+            background: white;
+
+        }
+
+        @media(max-width:768px) {
+
+            .story {
+
+                padding: 30px;
+
+            }
+
+            .title h1 {
+
+                font-size: 40px;
+
+            }
+
+            .title h3 {
+
+                font-size: 22px;
+
+            }
+
+            .story p {
+
+                font-size: 17px;
+
+                text-align: left;
+
+            }
+
+            .quote {
+
+                font-size: 24px;
+
+            }
+
+            .poem {
+
+                font-size: 22px;
+
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="title">
+
+            <h1>Unwritten Destinies</h1>
+
+            <h3>Journey with a Beautiful Stranger in the Midnight Express</h3>
+
+        </div>
+
+        <div class="cover">
+
+            <img src="image.png" alt="Story Cover">
+
+        </div>
+
+        <div class="description">
+
+            <strong>Two souls scripted to meet but not to stay — love meant to be felt, not lived.</strong>
+
+            <br><br>
+
+            Love, mystery, destiny, and a fleeting connection under moonlight.
+
+        </div>
+
+        <div class="story">
+
+            <div class="meta">
+
+                <span><strong>Date:</strong> 20/07/2025</span>
+
+                <span><strong>Time:</strong> 9:05 p.m.</span>
+
+                <span><strong>Route:</strong> Hyderabad → Chennai</span><br>
+
+            </div>
+
+            <p>
+                It was around 9 PM, the quiet hum of the night settling around me. Beside my berth, there she lay
+                sleeping—so effortlessly beautiful.<br>
+                Just a fleeting view of her serene presence sparked a soft emotion inside me; the grace of her presence,
+                the quiet rhythm of her breathing, and the delicate charm of her feet seemed to reach straight to my
+                heart, like a soft breeze whispering to a silent shore—adorned with an ankle chain that mesmerized me
+                with every sparkle and whisper.<br>
+                A tiny nose ring graced her face, adding a sparkle of elegance, making her beauty feel timeless. She
+                seemed like a sweet, innocent dream wrapped in serenity—her sleeping face reflecting a soft, unguarded
+                charm.<br>
+                In my mother tongue, I would say:
+
+            </p>
+
+            <div class="telugu">
+
+                "అందమే అసూయపడేలా ఉంది, ఆమె అందం."
+            </div>
+            <p>
+                Her lips—like petals kissed by the morning dew—left me with an unexplainable feeling, somewhere between
+                admiration and wonder.<br>
+                A soft, charming mole rested on her lips, like a little beauty mark, adding even more grace to her
+                already beautiful face. Her cuteness, her innocence, and those mesmerizing eyes… words fall short; they
+                cannot capture the purity of what I felt in that quiet moment.<br>
+                So stunning, her beauty gentle and rare,<br>
+                Her presence delicately stays in the midnight air.<br>
+                No, this isn’t love. I don’t believe in the madness of love at first sight.<br>
+                But I do believe in beauty.<br>
+                I do believe in admiration.<br>
+                And in that moment, <br>
+                I knew she was simply… awesome.
+
+            </p>
+
+            <div class="signature">
+
+                — Harsha Vinjamuri
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <a href="index.html" class="home">
+
+        ← Home
+
+    </a>
+
+</body>
+
+</html>

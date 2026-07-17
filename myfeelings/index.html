@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Feelings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Cinzel+Decorative:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Outfit, sans-serif;
+            background: #16120f;
+            color: #F5F2ED;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(185, 145, 72, .18), transparent 35%),
+                radial-gradient(circle at 85% 10%, rgba(110, 70, 35, .18), transparent 35%),
+                radial-gradient(circle at 50% 100%, rgba(60, 45, 30, .22), transparent 45%);
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image:
+                radial-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px);
+            background-size: 5px 5px;
+            opacity: .25;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: "Cinzel Decorative", serif;
+            font-size: 84px;
+            font-weight: 700;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            color: #F7E8C6;
+            text-shadow:
+                0 0 25px rgba(255, 213, 120, .15);
+        }
+
+        .hero h3 {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: 300;
+            font-style: italic;
+            letter-spacing: 2px;
+            color: #D8C8A5;
+        }
+
+        .hero p {
+            margin: 35px auto;
+            max-width: 720px;
+            line-height: 1.9;
+            font-size: 18px;
+            color: #9BA6B8;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 36px;
+            border-radius: 50px;
+            background: #C89B4F;
+            color: #111;
+            text-decoration: none;
+            font-weight: 600;
+            transition: .35s;
+        }
+
+        .button:hover {
+            background: #E6B55D;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(200, 155, 79, .3);
+        }
+
+        .about {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about h2,
+        .stories h2,
+        .contact h2 {
+            font-family: "Cinzel Decorative", serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: #F2D9A0;
+            margin-bottom: 28px;
+        }
+
+        .about p {
+            line-height: 2;
+            color: #A4AFBF;
+            font-size: 18px;
+        }
+
+        .grid {
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+        }
+
+        .story {
+            padding: 40px;
+            border-radius: 22px;
+            background: rgba(255, 255, 255, .03);
+            border: 1px solid rgba(255, 255, 255, .06);
+            backdrop-filter: blur(12px);
+            transition: .35s;
+        }
+
+        .story:hover {
+            transform: translateY(-10px);
+            border-color: #C89B4F;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, .35);
+        }
+
+        .story h3 {
+            font-family: "Cormorant Garamond";
+            font-size: 34px;
+            margin-bottom: 18px;
+        }
+
+        .story p {
+            color: #A7B2C3;
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+        .story a {
+            display: inline-block;
+            padding: 12px 26px;
+            border-radius: 40px;
+            background: #F7E8C6;
+            color: #050912;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .soon {
+            opacity: .55;
+        }
+
+        .soon a {
+            pointer-events: none;
+            background: #293241;
+            color: #d6d6d6;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            max-width: 650px;
+            margin: 25px auto 45px;
+            line-height: 1.9;
+            color: #A7B2C3;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .links a {
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid rgba(255, 255, 255, .08);
+            transition: .3s;
+        }
+
+        .links a:hover {
+            background: #F7E8C6;
+            color: #050912;
+        }
+
+        footer {
+            padding: 35px;
+            text-align: center;
+            color: #7C8798;
+            border-top: 1px solid rgba(255, 255, 255, .08);
+        }
+
+        @media(max-width:768px) {
+            .hero h1 {
+                font-size: 58px;
+            }
+
+            .hero h3 {
+                font-size: 20px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .about h2,
+            .stories h2,
+            .contact h2 {
+                font-size: 42px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero">
+        <div>
+            <h1>My Feelings</h1>
+            <h3>Some stories are written with ink. Others are written with the heart.</h3>
+            <p>
+                A quiet collection of thoughts, emotions, and moments woven into stories.
+                Each page carries a piece of life waiting to be discovered.
+            </p>
+            <a href="#stories" class="button">
+                Read Stories
+            </a>
+        </div>
+    </section>
+    <section class="about">
+        <h2>About</h2>
+        <p>
+            Words have the power to preserve memories, express emotions, and connect souls.
+            This space is where feelings become stories, and stories become timeless moments.
+        </p>
+    </section>
+    <section class="stories" id="stories">
+        <h2>Story Collection</h2>
+        <div class="grid">
+            <div class="story">
+                <h3>Unwritten Destinies</h3>
+                <p>
+                    Journey with a Beautiful Stranger in the Midnight Express
+                </p>
+                <a href="story1.html">
+                    Read Story
+                </a>
+            </div>
+            <div class="story">
+                <h3>Spoken by Love</h3>
+                <p>Love That Shines Beyond Time.</p>
+                <a href="story2.html">
+                    Read Story
+                </a>
+            </div>
+            <div class="story">
+                <h3>Love of Mother</h3>
+                <p>The First Home Every Heart Knows.</p>
+                <a href="story3.html">
+                    Read Story
+                </a>
+            </div>
+            <div class="story">
+                <h3>TiP - Take it Positive</h3>
+                <p>Sometimes Happiness Depends Only On The Way We Choose To Understand.</p>
+                <a href="story4.html">
+                    Read Story
+                </a>
+            </div>
+            <div class="story">
+                <h3>Happiness</h3>
+                <p>The Greatest Wealth Is the Smile We Create.</p>
+                <a href="story5.html">
+                    Read Story
+                </a>
+            </div>
+            <div class="story">
+                <h3>Problems</h3>
+                <p>Life Doesn't Test Us With Problems. It Reveals Us Through Them.</p>
+                <a href="story6.html">
+                    Read Story
+                </a>
+            </div>
+            <div class="story">
+                <h3>DEPRESSION</h3>
+                <p>Keep yourself busy, and there will be no time for depression.</p>
+                <a href="story7.html">
+                    Read Story
+                </a>
+            </div>
+            <div class="story">
+                <h3>మిగిలిన మాటలు</h3>
+                <p>చూపుల వెనుక దాగిన భావాలు... మౌనంలో మిగిలిన ప్రేమ.</p>
+                <a href="story8.html">
+                    Read Story
+                </a>
+            </div>
+            <div class="story soon">
+                <h3>Story Nine</h3>
+                <p>Coming Soon...</p>
+                <a>Coming Soon</a>
+            </div>
+            <div class="story soon">
+                <h3>Story Ten</h3>
+                <p>Coming Soon...</p>
+                <a>Coming Soon</a>
+            </div>
+            <div class="story soon">
+                <h3>Story Eleven</h3>
+                <p>Coming Soon...</p>
+                <a>Coming Soon</a>
+            </div>
+            <div class="story soon">
+                <h3>Story Twelve</h3>
+                <p>Coming Soon...</p>
+                <a>Coming Soon</a>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <h2>Let's Connect</h2>
+        <p>
+            If these words resonate with you, or you'd like to share your thoughts,
+            I'd be happy to hear from you.
+        </p>
+        <div class="links">
+            <a href="mailto:vinjamuriharsha123@gmail.com">
+                Email
+            </a>
+            <a href="https://www.instagram.com/im_harshhaa/" target="_blank">
+                Instagram
+            </a>
+            <a href="https://www.linkedin.com/in/harshavinjamuri/" target="_blank">
+                LinkedIn
+            </a>
+        </div>
+    </section>
+    <footer>
+        © 2026 My Feelings • Every story begins with a feeling.
+    </footer>
+</body>
+
+</html>

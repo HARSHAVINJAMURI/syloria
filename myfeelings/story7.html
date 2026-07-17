@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEPRESSION | My Feelings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Outfit, sans-serif;
+            background: #0b0b10;
+            color: #f5f5f5;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(circle at 10% 10%, rgba(255, 120, 120, .08), transparent 28%),
+                radial-gradient(circle at 85% 15%, rgba(255, 208, 120, .08), transparent 35%),
+                radial-gradient(circle at 50% 100%, rgba(255, 255, 255, .03), transparent 40%),
+                #0b0b10;
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image:
+                radial-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px);
+            background-size: 6px 6px;
+            opacity: .35;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            width: min(1000px, 92%);
+            margin: 70px auto 120px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        header h1 {
+            font-family: "Cinzel Decorative", serif;
+            font-size: 58px;
+            color: #ffe5a8;
+            margin-bottom: 18px;
+            letter-spacing: 2px;
+        }
+
+        header h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 30px;
+            font-style: italic;
+            font-weight: 400;
+            color: #d8d8d8;
+        }
+
+        .story {
+            background: rgba(255, 255, 255, .03);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 24px;
+            padding: 60px;
+            backdrop-filter: blur(16px);
+            transition: .35s;
+        }
+
+        .story:hover {
+            border-color: #ffb96a;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, .35);
+        }
+
+        .story p {
+            font-size: 18px;
+            line-height: 2.1;
+            margin-bottom: 24px;
+            text-align: justify;
+            color: #ececec;
+        }
+
+        .story h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 38px;
+            margin: 45px 0 30px;
+            color: #ffd897;
+        }
+
+        .quote {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 34px;
+            line-height: 1.8;
+            text-align: center;
+            color: #ffe5b0;
+            margin-bottom: 45px;
+            font-style: italic;
+        }
+
+        .question {
+            font-size: 24px;
+            font-family: "Cormorant Garamond", serif;
+            color: #ffe2aa;
+            margin: 28px 0;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        mark {
+            background: none;
+            padding: 0;
+            font-weight: 600;
+        }
+
+        .gold {
+            color: #ffd166;
+        }
+
+        .orange {
+            color: #ffb86c;
+        }
+
+        .blue {
+            color: #8fd3ff;
+        }
+
+        .pink {
+            color: #ff9dbd;
+        }
+
+        .red {
+            color: #ff7f7f;
+        }
+
+        .home {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            padding: 14px 28px;
+            background: #ffbf69;
+            color: #111;
+            text-decoration: none;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: .35s;
+        }
+
+        .home:hover {
+            background: white;
+            transform: translateY(-5px);
+        }
+
+        @media(max-width:768px) {
+            .story {
+                padding: 35px;
+            }
+
+            header h1 {
+                font-size: 42px;
+            }
+
+            header h3 {
+                font-size: 22px;
+            }
+
+            .story p {
+                font-size: 16px;
+            }
+
+            .question {
+                font-size: 21px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>DEPRESSION</h1>
+            <h3>Keep Yourself Busy, And There Will Be No Time For Depression.</h3>
+        </header>
+        <div class="story">
+            <div class="quote">
+                Depression — <span class="gold">అవసాదం</span> — <span class="orange">अवसाद</span>
+            </div>
+            <p>
+                A word that sounds <mark class="blue">small</mark> when spoken...
+                but feels unbelievably <mark class="red">heavy</mark> when carried.
+            </p>
+            <p>
+                "<em>Once upon a time...</em>"
+                <br><br>
+                No...
+                Wait...
+            </p>
+            <p>
+                Let's start in a different way.
+            </p>
+            <p>
+                Generally,
+                people fall into depression when they lose
+                <mark class="gold">someone they love</mark>...
+                when death steals a person they were never ready
+                <mark class="orange">to let go of</mark>.
+            </p>
+            <p>
+                Some lose themselves after being betrayed by the people they
+                <mark class="blue">trusted the most</mark>.
+            </p>
+            <p>
+                Some after broken
+                <mark class="pink">relationships</mark>.
+            </p>
+            <p>
+                Some after losing their
+                <mark class="orange">dignity</mark>,
+                their
+                <mark class="gold">reputation</mark>,
+                their
+                <mark class="blue">dreams</mark>,
+                or after facing the greatest failure of
+                <mark class="red">their lives</mark>.
+            </p>
+            <p>
+                Life suddenly...
+                stops.
+            </p>
+            <p>
+                The world keeps moving...
+                but somewhere inside,
+                <mark class="red">they don't.</mark>
+            </p>
+            <p>
+                The <mark class="gold">truth</mark> is...
+                life quietly asks us
+                to begin again,
+                to restart,
+                to rebuild ourselves
+                from the ruins.
+            </p>
+            <h2>
+                But...
+                How?
+            </h2>
+            <div class="question">
+                How do you move on when your heart still waits for someone who is gone?
+            </div>
+            <div class="question">
+                How do you imagine life without them?
+            </div>
+            <div class="question">
+                How do you walk forward when your feet are still standing in yesterday?
+            </div>
+            <div class="question">
+                How do you face reality...
+                when reality itself hurts?
+            </div>
+            <p>
+                And then...
+                the <mark class="gold">memories</mark> arrive.
+            </p>
+            <p>
+                The places...
+                <br>
+                The favourites...
+                <br>
+                The late-night conversations...
+                <br>
+                The laughs...
+                <br>
+                The pain...
+                <br>
+                The support...
+                <br>
+                The moments they stood beside you...
+            </p>
+            <p>
+                Suddenly,
+                your
+                <mark class="blue">happiest memories</mark>
+                become your
+                <mark class="red">heaviest wounds</mark>.
+            </p>
+            <p>
+                Every little thing...
+                starts
+                <mark class="red">hitting hard.</mark>
+            </p>
+            <p>
+                And depression slowly whispers...
+            </p>
+            <div class="quote">
+                "Stay here...
+                Don't move."
+            </div>
+            <p>
+                But life whispers something else...
+            </p>
+            <div class="quote">
+                "You still have a chance."
+            </div>
+            <p>
+                Men or women...
+                strength is not about
+                <mark class="blue">never crying.</mark>
+            </p>
+            <p>
+                Strength is
+                crying,
+                breaking,
+                feeling completely lost...
+                and still
+                choosing
+                to
+                <mark class="gold">stand up.</mark>
+            </p>
+            <p>
+                Yes...
+                it is hard.
+            </p>
+            <p>
+                Very hard...
+            </p>
+            <p>
+                I understand.
+            </p>
+            <p>
+                Because...
+                I have lived through it too.
+            </p>
+            <hr>
+            <h2>
+                My Story
+            </h2>
+            <p>
+                I got depressed
+                when I was
+                <mark class="red">broken.</mark>
+            </p>
+            <p>
+                I got depressed
+                when I
+                <mark class="orange">failed</mark>
+                to get a job.
+            </p>
+            <p>
+                I got depressed
+                when I felt
+                I had
+                <mark class="red">lost</mark>
+                my family's
+                <mark class="gold">trust</mark>
+                in me.
+            </p>
+            <p>
+                There were
+                nights
+                when I cried.
+            </p>
+            <p>
+                Days
+                when I felt
+                completely helpless.
+            </p>
+            <p>
+                Moments
+                when I believed
+                I was
+                totally
+                alone.
+            </p>
+            <p>
+                No one beside me.
+                <br>
+                No one to understand me.
+            </p>
+            <p>
+                And then...
+                one day...
+            </p>
+            <div class="question">
+                I asked myself...
+            </div>
+            <div class="quote">
+                "Why can't I be with myself...
+                when I am alone?"
+            </div>
+            <p>
+                Maybe...
+                no one stood beside me.
+            </p>
+            <p>
+                But...
+                <mark class="gold">I stood beside myself.</mark>
+            </p>
+            <p>
+                I believed in myself.
+            </p>
+            <p>
+                I trusted myself.
+            </p>
+            <p>
+                Slowly...
+                I realised...
+            </p>
+            <div class="quote">
+                "I am not alone.
+                <br><br>
+                I have
+                <mark class="gold">Me.</mark>"
+            </div>
+            <hr>
+            <h2>
+                So...
+                I Changed.
+            </h2>
+            <p>
+                I changed my
+                <mark class="blue">thinking.</mark>
+            </p>
+            <p>
+                I changed
+                the way
+                I
+                <mark class="orange">spoke.</mark>
+            </p>
+            <p>
+                I changed
+                my
+                <mark class="gold">attitude.</mark>
+            </p>
+            <p>
+                I changed
+                my
+                <mark class="pink">behaviour.</mark>
+            </p>
+            <p>
+                Not because
+                the world
+                asked me to.
+            </p>
+            <p>
+                But because...
+            </p>
+            <div class="quote">
+                I wanted
+                to be
+                <mark class="gold">Happy.</mark>
+            </div>
+            <p>
+                And I made
+                one promise
+                to myself...
+            </p>
+            <div class="quote">
+                "I will be Happy."
+            </div>
+            <hr>
+            <h2>
+                This Is Not The End.
+            </h2>
+            <p>
+                This pain...
+                is not
+                your
+                <mark class="red">final chapter.</mark>
+            </p>
+            <p>
+                This heartbreak...
+            </p>
+            <p>
+                This failure...
+            </p>
+            <p>
+                This loneliness...
+            </p>
+            <p>
+                This darkness...
+            </p>
+            <p>
+                Maybe...
+            </p>
+            <p>
+                Just maybe...
+            </p>
+            <p>
+                It is your
+                <mark class="gold">second chance</mark>
+                to restart life.
+            </p>
+            <p>
+                A new version of
+                <mark class="blue">You</mark>
+                is waiting
+                on the other side
+                of pain.
+            </p>
+            <p>
+                So...
+                cry if you need to.
+            </p>
+            <p>
+                Feel sad
+                if you must.
+            </p>
+            <p>
+                Take your time.
+            </p>
+            <p>
+                But...
+                don't stop
+                <mark class="gold">living.</mark>
+            </p>
+            <div class="question">
+                Keep Moving.
+            </div>
+            <div class="question">
+                Keep Growing.
+            </div>
+            <div class="question">
+                Keep Trying.
+            </div>
+            <p>
+                And most importantly...
+            </p>
+            <div class="quote">
+                Keep yourself
+                <mark class="gold">Busy</mark>,
+                because
+                <mark class="red">Depression</mark>
+                feeds on
+                empty silence.
+            </div>
+            <hr>
+            <div class="quote">
+                Depression...
+                doesn't disappear overnight.
+            </div>
+            <p>
+                Healing is not about
+                forgetting the past.
+            </p>
+            <p>
+                Healing is about
+                learning to
+                <mark class="blue">live with it</mark>
+                without letting it
+                control your future.
+            </p>
+            <p>
+                Some days
+                will still feel heavy.
+            </p>
+            <p>
+                Some nights
+                will still hurt.
+            </p>
+            <p>
+                But every small step
+                you take today
+                is taking you
+                closer to the person
+                you are becoming.
+            </p>
+            <p>
+                Never be ashamed
+                to ask for help.
+            </p>
+            <p>
+                Never think
+                you're weak
+                for sharing
+                your pain.
+            </p>
+            <p>
+                Sometimes,
+                the bravest thing
+                you can do
+                is simply say,
+            </p>
+            <div class="quote">
+                "I need help."
+            </div>
+            <p>
+                And if no one
+                is around...
+            </p>
+            <p>
+                Start with yourself.
+            </p>
+            <p>
+                Believe in yourself.
+            </p>
+            <p>
+                Stand beside yourself.
+            </p>
+            <p>
+                Because...
+                before anyone else,
+                you deserve
+                your own
+                <mark class="gold">love</mark>,
+                your own
+                <mark class="orange">support</mark>,
+                and your own
+                <mark class="pink">hope.</mark>
+            </p>
+            <hr>
+            <div class="quote">
+                Depression —
+                Keep yourself busy,
+                and one day,
+                you won't have
+                time for it anymore.
+            </div>
+        </div>
+    </div>
+    <a href="index.html" class="home">
+        ← Home
+    </a>
+</body>
+
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems | My Feelings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: Outfit, sans-serif;
+            background: #0b0b10;
+            color: #f5f5f5;
+            overflow-x: hidden;
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(circle at 10% 10%, rgba(255, 120, 120, .08), transparent 28%),
+                radial-gradient(circle at 85% 15%, rgba(255, 208, 120, .08), transparent 35%),
+                radial-gradient(circle at 50% 100%, rgba(255, 255, 255, .03), transparent 40%),
+                #0b0b10;
+            z-index: -2;
+        }
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image:
+                radial-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px);
+            background-size: 6px 6px;
+            opacity: .35;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .container {
+            width: min(900px, 92%);
+            margin: 80px auto 120px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        header h1 {
+            font-family: "Cinzel Decorative", serif;
+            font-size: 56px;
+            color: #ffe5a8;
+            margin-bottom: 18px;
+        }
+        header h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 28px;
+            font-style: italic;
+            font-weight: 400;
+            color: #d8d8d8;
+        }
+        .story {
+            background: rgba(255, 255, 255, .03);
+            border: 1px solid rgba(255, 255, 255, .08);
+            backdrop-filter: blur(14px);
+            border-radius: 24px;
+            padding: 60px;
+            transition: .35s;
+        }
+        .story:hover {
+            border-color: #ffb96a;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, .35);
+        }
+        .quote {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 42px;
+            line-height: 1.8;
+            text-align: center;
+            color: #ffe2aa;
+            margin-bottom: 45px;
+        }
+        .story p {
+            font-size: 22px;
+            line-height: 2.1;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        mark {
+            background: none;
+            padding: 0;
+            font-weight: 600;
+        }
+        .gold {
+            color: #ffffff;
+        }
+        .orange {
+            color: #ffffff;
+        }
+        .blue {
+            color: #4173a8;
+        }
+        .pink {
+            color: #ffffff;
+        }
+        .red {
+            color: #ff7f7f;
+        }
+        .footer {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, .08);
+            text-align: center;
+            font-size: 24px;
+            font-family: "Cormorant Garamond", serif;
+            color: #ffe2aa;
+            line-height: 2;
+        }
+        .home {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            padding: 14px 28px;
+            background: #ffbf69;
+            color: #111;
+            text-decoration: none;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: .35s;
+        }
+        .home:hover {
+            background: white;
+            transform: translateY(-5px);
+        }
+        @media(max-width:768px) {
+            .story {
+                padding: 35px;
+            }
+            header h1 {
+                font-size: 40px;
+            }
+            .quote {
+                font-size: 30px;
+            }
+            .story p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Problems</h1>
+            <h3>Life Doesn't Test Us With Problems. It Reveals Us Through Them.</h3>
+        </header>
+        <div class="story">
+            <div class="quote">
+                Problems...<br>
+                Problems...<br>
+                Problems...
+            </div>
+            <p>
+                <strong>
+                    Evariki Levu <mark class="red">Problems</mark>?
+                </strong>
+<br>
+                <mark class="red">Dabbu Unnodiki</mark> untai...
+<br>
+                <mark class="red">Pedavadiki</mark> untai...
+<br>
+                <mark class="red">Telivinavadiki</mark> untai...
+<br>
+                <mark class="red">Telivilenivadiki</mark> untai...
+<br>
+                <mark class="red">Neeku, Naaku...</mark>
+          <br>
+                <strong>
+                    Andariki untai...
+                    <mark class="red">Problems.</mark>
+                </strong>
+            <br>
+            <p>
+                Evari
+                <mark class="blue">Level of Mind</mark>
+                ki thaggattu,
+  <br>
+
+                Valla
+                <mark class="red">Problems</mark>
+                Vallaki Untai.
+  
+            <br>
+            <p>
+                <strong>
+                    Level of Mind
+                    =
+                    Level of Understanding.
+                </strong>
+            </p>
+
+            <div class="footer">
+                Don't Run Away From Problems.<br>
+                Understand Them.<br>
+                Face Them.<br><br>
+                <strong>
+                    <mark class="gold">
+                        Face it Guys.
+                    </mark>
+                </strong>
+            </div>
+        </div>
+    </div>
+    <a href="index.html" class="home">
+        ← Home
+    </a>
+</body>
+</html>

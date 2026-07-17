@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TiP - Take it Positive | My Feelings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;500;700&family=Noto+Sans+Telugu:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: Outfit, sans-serif;
+            background: #0d1117;
+            color: #f3f4f6;
+            overflow-x: hidden;
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(circle at 15% 10%, rgba(59, 130, 246, .08), transparent 30%),
+                radial-gradient(circle at 85% 0%, rgba(34, 197, 94, .07), transparent 30%),
+                radial-gradient(circle at 50% 100%, rgba(249, 115, 22, .05), transparent 45%),
+                #0d1117;
+            z-index: -2;
+        }
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image:
+                radial-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px);
+            background-size: 6px 6px;
+            opacity: .35;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .container {
+            width: min(1050px, 92%);
+            margin: 70px auto 120px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+        header h1 {
+            font-family: "Cinzel Decorative", serif;
+            font-size: 56px;
+            color: #ffd166;
+            margin-bottom: 15px;
+        }
+        header h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 30px;
+            font-style: italic;
+            font-weight: 400;
+            color: #d1d5db;
+        }
+        .story {
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .08);
+            backdrop-filter: blur(16px);
+            border-radius: 24px;
+            padding: 55px;
+            transition: .35s;
+        }
+        .story:hover {
+            border-color: #ffb96a;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, .35);
+        }
+        .section-title {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 42px;
+            margin-bottom: 35px;
+            color: #ffd166;
+        }
+        .story p {
+            font-size: 18px;
+            line-height: 2.05;
+            margin-bottom: 22px;
+            text-align: justify;
+            color: #ececec;
+        }
+        hr {
+            border: none;
+            height: 1px;
+            background: rgba(255, 255, 255, .08);
+            margin: 50px 0;
+        }
+        blockquote {
+            margin: 40px 0;
+            padding: 22px 30px;
+            border-left: 4px solid #ffbf69;
+            background: rgba(34, 197, 94, .08);
+            border-radius: 12px;
+            line-height: 2;
+            font-size: 18px;
+        }
+        .telugu {
+            font-family: "Noto Sans Telugu", sans-serif;
+        }
+        mark {
+            background: none;
+            padding: 0;
+            font-weight: 600;
+        }
+        .blue {
+            color: #60a5fa;
+        }
+        .green {
+            color: #4ade80;
+        }
+        .yellow {
+            color: #ffd166;
+        }
+        .orange {
+            color: #fb923c;
+        }
+        .pink {
+            color: #f472b6;
+        }
+        .red {
+            color: #ff6b6b;
+        }
+        .home {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            padding: 14px 28px;
+            border-radius: 50px;
+            background: #ffbf69;
+            color: black;
+            text-decoration: none;
+            font-weight: 600;
+            transition: .35s;
+        }
+        .home:hover {
+            transform: translateY(-5px);
+            background: #ffff;
+            color: #111;
+        }
+        .note {
+            margin-top: 45px;
+            padding: 20px;
+            background: rgba(96, 165, 250, .08);
+            border-left: 4px solid #60a5fa;
+            border-radius: 10px;
+            font-style: italic;
+        }
+        @media(max-width:768px) {
+            .story {
+                padding: 30px;
+            }
+            header h1 {
+                font-size: 42px;
+            }
+            header h3 {
+                font-size: 24px;
+            }
+            .story p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TiP - Take it Positive</h1>
+            <h3>Sometimes Happiness Depends Only On The Way We Choose To Understand.</h3>
+        </header>
+        <div class="story">
+            <h2 class="section-title">తెలుగు</h2>
+            <p>
+                అనగనగా ఒక <mark class="yellow">ఊరు.</mark>
+            </p>
+            <p>
+                ఆ ఊరులో ఒక చిన్న <mark class="blue">ఇల్లు.</mark>
+            </p>
+            <p>
+                ఆ ఇంట్లో ఒక అందమైన <mark class="green">కుటుంబం</mark> ఉండేది.
+            </p>
+            <p>
+                ఆ కుటుంబంలో అమ్మ, నాన్న, ఒక చిన్నారి (15 సంవత్సరాల పాప) కలిసి ఉండేవారు.
+            </p>
+            <p>
+                అమ్మ చాలా <mark class="orange">విశాల దృక్పథం గలది</mark>, రేపటి గురించి కొంచెం ఆలోచిస్తూ ఈరోజు
+                జీవించేది.
+            </p>
+            <p>
+                నాన్న మాత్రం చాలా <mark class="yellow">సరదా</mark> మనిషి.
+                "రేపు ఏమవుతుందో ఆలోచించకండి,
+                ఈ క్షణం ఎలా ఉన్నాం అనేదే ముఖ్యం"
+                అని చెప్పేవాడు.
+            </p>
+            <p>
+                వాళ్ల జీవితం
+                <mark class="green">చాలా హాయిగా</mark>,
+                <mark class="orange">కొంచెం బాధలగా</mark>,
+                <mark class="blue">కేజీ సమస్యలతో</mark>,
+                <mark class="yellow">లీటర్ అందాలతో</mark>,
+                మరీ ముఖ్యంగా
+                <mark class="pink">"మూడు పూలు ఆరు కాయలు"</mark>
+                లా సంతోషంగా సాగేది.
+            </p>
+            <hr>
+            <p>
+                ఒక రోజు సాయంత్రం, భోజనం అయ్యాక...
+            </p>
+            <p>
+                అమ్మకి సహాయంగా నాన్న పాత్రలు కడుగుతున్నాడు.
+            </p>
+            <p>
+                అప్పుడు అమ్మ ఒక గిన్నె చూపిస్తూ,
+            </p>
+            <p>
+                <strong>
+                    "ఈ గిన్నె మీ తాత వచ్చి కడుగుతాడా?"
+                </strong>
+                అని అడిగింది.
+            </p>
+            <p>
+                నాన్న చిన్నగా నవ్వి,
+                ఏమీ అనకుండా అన్ని పాత్రలు కడిగి పూర్తిచేశాడు.
+            </p>
+            <p>
+                ఇది విన్న చిన్నారి అర్థం కాక నిశ్శబ్దంగా నిలబడి చూసింది.
+            </p>
+            <p>
+                కొద్దిసేపటి తర్వాత నాన్న దగ్గరకు వెళ్లి,
+            </p>
+            <p>
+                <strong>
+                    "నాన్న... అమ్మ అలా అన్నప్పుడు నువ్వెందుకు నవ్వావు?"
+                </strong>
+                అని అడిగింది.
+            </p>
+            <p>
+                నాన్న చిరునవ్వుతో అన్నాడు...
+            </p>
+            <blockquote>
+                "నాకు తాత అంటే
+                అమ్మకు కూడా తాతే కదా...
+                అంటే
+                ఆమె తన తాతనే అన్నది అనుకున్నాను."
+            </blockquote>
+            <p>
+                అది విన్న చిన్నారి గట్టిగా నవ్వింది.
+            </p>
+            <hr>
+            <p>
+                అప్పుడు నాన్న మెల్లగా చెప్పాడు...
+            </p>
+            <blockquote>
+                "మనం ఏ విషయం అయినా
+                <mark class="green">పాజిటివ్</mark>
+                గా తీసుకుంటే
+                మనం సంతోషంగా ఉంటాం.
+                అదే
+                <mark class="red">నెగటివ్</mark>
+                గా తీసుకుంటే
+                మనమే బాధపడతాం.
+                <br><br>
+                అమ్మ
+                'మీ తాత'
+                అని అన్నప్పుడు,
+                నేను గొడవ పడితే,
+                ఇద్దరం సంతోషంగా ఉండలేం కదా.
+                <br><br>
+                అందుకే
+                <mark class="yellow">
+                    మనం సంతోషంగా ఉంటూ,
+                    మనతో ఉన్న వాళ్లను కూడా
+                    సంతోషంగా ఉంచాలి.
+                </mark>
+                "
+            </blockquote>
+            <p>
+                ఇది అంతా గోడ వెనక నుండి వింటున్న అమ్మ,
+                చాలా
+                <mark class="green">సంతోషించింది.</mark>
+            </p>
+            <hr>
+            <p style="text-align:center;font-size:26px;font-family:'Cormorant Garamond',serif;color:#ffd166;">
+                <strong>Take everything Positive!</strong>
+                <br><br>
+                <strong>Be Happy, Make Everyone Happy ❤️</strong>
+            </p>
+            <div class="note">
+                (Note: 15 ఏళ్ల పిల్లని "చిన్నారి" అనడం ఆశ్చర్యంగా అనిపించొచ్చు...
+                కానీ నాన్నకి తన కూతురు ఎప్పటికీ చిన్నారే కదా!)
+            </div>
+            <hr>
+            <h2 class="section-title">English</h2>
+            <p>
+                Once upon a time, there was a <mark class="yellow">village</mark>.
+            </p>
+            <p>
+                In that village, there was a small <mark class="blue">house</mark>.
+            </p>
+            <p>
+                Inside that house lived a beautiful <mark class="green">family</mark>.
+            </p>
+            <p>
+                The family consisted of a mother, a father, and a little girl (15 years old).
+            </p>
+            <p>
+                The mother was very <mark class="orange">broad-minded</mark>.
+                She always lived in the present while thinking a little about tomorrow.
+            </p>
+            <p>
+                The father, on the other hand, was a very <mark class="yellow">fun-loving</mark> person.
+                He always said,
+                <strong>
+                    "Don't worry about tomorrow.
+                    What matters is how we live this moment."
+                </strong>
+            </p>
+            <p>
+                Their life was
+                <mark class="green">very peaceful</mark>,
+                with
+                <mark class="orange">a little sadness</mark>,
+                <mark class="blue">kilo problems</mark>,
+                <mark class="yellow">litre happiness</mark>,
+                and above all,
+                it continued happily like
+                <mark class="pink">"three flowers and six fruits"</mark>
+                —a phrase symbolizing a joyful and complete family life.
+            </p>
+            <hr>
+            <p>
+                One evening after dinner,
+                the father was washing dishes to help his wife.
+            </p>
+            <p>
+                The mother pointed at one vessel and jokingly asked,
+            </p>
+            <p>
+                <strong>
+                    "Will your grandfather come and wash this vessel?"
+                </strong>
+            </p>
+            <p>
+                The father simply smiled,
+                said nothing,
+                and quietly finished washing all the dishes.
+            </p>
+            <p>
+                The little girl watched everything silently,
+                unable to understand why he smiled.
+            </p>
+            <p>
+                After some time,
+                she went to her father and asked,
+            </p>
+            <p>
+                <strong>
+                    "Dad... why did you smile when Mom said that?"
+                </strong>
+            </p>
+            <p>
+                The father smiled gently and replied,
+            </p>
+            <blockquote>
+                "If he is my grandfather...
+                then he is also your mom's grandfather, right?
+                So...
+                I thought she was talking about her own grandfather."
+            </blockquote>
+            <p>
+                The little girl burst into laughter.
+            </p>
+            <hr>
+            <p>
+                Then the father softly explained,
+            </p>
+            <blockquote>
+                "If we choose to see everything in a
+                <mark class="green">positive</mark>
+                way,
+                we remain happy.
+                But if we choose the
+                <mark class="red">negative</mark>
+                side,
+                we only hurt ourselves.
+                <br><br>
+                When your mother said,
+                'Your grandfather will wash it,'
+                if I had argued,
+                'How can you speak about my grandfather like that?'
+                we both would have lost our happiness.
+                <br><br>
+                So,
+                <mark class="yellow">
+                    stay happy,
+                    and make the people around you happy too.
+                </mark>
+                "
+            </blockquote>
+            <p>
+                The mother,
+                who had been listening quietly from behind the wall,
+                felt truly
+                <mark class="green">happy</mark>.
+            </p>
+            <hr>
+            <p
+                style="text-align:center;font-size:28px;font-family:'Cormorant Garamond',serif;color:#ffd166;line-height:1.8;">
+                <strong>Take Everything Positive!</strong>
+                <br><br>
+                <strong>Be Happy, Make Everyone Happy ❤️</strong>
+            </p>
+            <div class="note">
+                (Note: Calling a 15-year-old girl a "little girl" may sound unusual...
+                but to a father,
+                his daughter will always remain
+                his little girl.)
+            </div>
+        </div>
+    </div>
+    <a href="index.html" class="home">
+        ← Home
+    </a>
+</body>
+</html>

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happiness | My Feelings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;500;700&family=Noto+Sans+Telugu:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Outfit, sans-serif;
+            background: #0b0b10;
+            color: #f5f5f5;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(circle at 10% 10%, rgba(255, 120, 120, .08), transparent 28%),
+                radial-gradient(circle at 85% 15%, rgba(255, 208, 120, .08), transparent 35%),
+                radial-gradient(circle at 50% 100%, rgba(255, 255, 255, .03), transparent 40%),
+                #0b0b10;
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px);
+            background-size: 6px 6px;
+            opacity: .35;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            width: min(1050px, 92%);
+            margin: 70px auto 120px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        header h1 {
+            font-family: "Cinzel Decorative", serif;
+            font-size: 58px;
+            color: #ffe5a8;
+            margin-bottom: 12px;
+        }
+
+        header h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 30px;
+            font-style: italic;
+            font-weight: 400;
+            color: #d8d8d8;
+        }
+
+        .story {
+            background: rgba(255, 255, 255, .03);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 24px;
+            padding: 55px;
+            backdrop-filter: blur(14px);
+            transition: .35s;
+        }
+
+        .story:hover {
+            border-color: #ffb96a;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, .35);
+        }
+
+        .section-title {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 42px;
+            margin-bottom: 35px;
+            color: #ffd897;
+        }
+
+        .story p {
+            font-size: 18px;
+            line-height: 2.05;
+            margin-bottom: 22px;
+            color: #ececec;
+            text-align: justify;
+        }
+
+        blockquote {
+            border-left: 4px solid #ffbf69;
+            padding: 22px 30px;
+            margin: 40px 0;
+            background: rgba(255, 191, 105, .06);
+            border-radius: 12px;
+            line-height: 2;
+        }
+
+        .telugu {
+            font-family: "Noto Sans Telugu", sans-serif;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: rgba(255, 255, 255, .08);
+            margin: 45px 0;
+        }
+
+        mark {
+            background: none;
+            padding: 0;
+            font-weight: 600;
+        }
+
+        .gold {
+            color: #ffd166;
+        }
+
+        .blue {
+            color: #8fd3ff;
+        }
+
+        .orange {
+            color: #ffb86c;
+        }
+
+        .pink {
+            color: #ff8fb3;
+        }
+
+        .red {
+            color: #ff7d7d;
+        }
+
+        .home {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            padding: 14px 28px;
+            border-radius: 40px;
+            background: #ffbf69;
+            color: #111;
+            text-decoration: none;
+            font-weight: 600;
+            transition: .35s;
+        }
+
+        .home:hover {
+            background: white;
+            transform: translateY(-5px);
+        }
+
+        .note {
+            margin-top: 45px;
+            padding: 20px;
+            background: rgba(255, 191, 105, .06);
+            border-left: 4px solid #ffbf69;
+            border-radius: 10px;
+        }
+
+        @media(max-width:768px) {
+            .story {
+                padding: 30px;
+            }
+
+            header h1 {
+                font-size: 42px;
+            }
+
+            header h3 {
+                font-size: 22px;
+            }
+
+            .story p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Happiness</h1>
+            <h3>The Greatest Wealth Is the Smile We Create.</h3>
+        </header>
+        <div class="story">
+            <h2 class="section-title">తెలుగు</h2>
+            <p>
+                అనగనగా ఒక ఊరిలో ఒక <mark class="gold">రైతు</mark> ఉండేవాడు.
+            </p>
+            <p>
+                అతను ప్రతిరోజూ పొలం పనులు చేసుకుంటూ,
+                ఆవులు, గేదెలు, మేకలను చూసుకుంటూ
+                తన జీవనాన్ని సాగించేవాడు.
+            </p>
+            <p>
+                రైతులకు పంట చేతికి వచ్చేవరకు
+                ఒక్క రూపాయి కూడా ఆదాయం ఉండదు.
+                కానీ రోజువారీ అవసరాలకు ఖర్చులు మాత్రం ఆగవు.
+            </p>
+            <p>
+                ఆ రైతు తన పొలంలో
+                కొబ్బరి చెట్లు,
+                అరటి చెట్లు,
+                పూల మొక్కలు,
+                కూరగాయల మొక్కలు పెంచి,
+                వాటిని అమ్మి,
+                ఆవు పాలు,
+                గేదె పాలు అమ్మి
+                తన <mark class="orange">కుటుంబాన్ని</mark> పోషించేవాడు.
+            </p>
+            <p>
+                అలా సాగుతున్న జీవితం
+                ఒకసారి కష్టాల్లో పడింది.
+            </p>
+            <p>
+                వర్షాలు పడకపోవడం వల్ల
+                పంటలు పండలేదు.
+            </p>
+            <p>
+                పంట చేతికి రాక,
+                ఆ రైతు ఎంతో బాధలో మునిగిపోయాడు.
+            </p>
+            <hr>
+            <p>
+                ఒక రోజు
+                అతని <mark class="pink">కూతురు</mark> దగ్గరకు వచ్చి,
+            </p>
+            <p>
+                <strong>
+                    "నాన్నా...
+                    నాకు సైకిల్ కొంటావా?"
+                </strong>
+            </p>
+            <p>
+                అని అడిగింది.
+            </p>
+            <p>
+                రైతు మనసు బాధలో ఉన్నా,
+            </p>
+            <p>
+                <strong>
+                    "ఇప్పుడు కాదు తల్లి...
+                    వచ్చే ఏడాది తప్పకుండా కొంటాను."
+                </strong>
+            </p>
+            <p>
+                అని ప్రేమగా చెప్పాడు.
+            </p>
+            <p>
+                కానీ చిన్నారి ఒప్పుకోలేదు.
+            </p>
+            <p>
+                కొద్దిసేపు ఆలోచించిన రైతు ఇలా అన్నాడు...
+            </p>
+            <blockquote>
+                "అమ్మా...
+                నీకు సైకిల్ కొనిపెడతాను.
+                కానీ ఒక <mark class="gold">షరతు</mark> ఉంది.
+                <br><br>
+                ప్రతిరోజూ
+                నేను పాలు పోసి వచ్చినప్పుడు
+                నీకు
+                <mark class="blue">₹10</mark>
+                ఇస్తాను.
+                <br><br>
+                నీ దగ్గర
+                <mark class="blue">₹3000</mark>
+                అయినప్పుడు
+                మనము సైకిల్ కొందాం."
+            </blockquote>
+            <p>
+                చిన్నారి ఆనందంతో సరే అని ఒప్పుకుంది.
+            </p>
+            <p>
+                ఆ ఆనందం చూసి
+                రైతు హృదయం కరిగిపోయింది.
+                తన బాధ అంతా మర్చిపోయాడు.
+            </p>
+            <hr>
+            <p>
+                అలా రోజులు గడుస్తున్నాయి...
+            </p>
+            <p>
+                నాన్న ప్రతి రోజు డబ్బు ఇస్తాడు,
+                పాప జాగ్రత్తగా దాచుకుంటుంది.
+            </p>
+            <p>
+                ఒక రోజు
+                ఆవు పాలు ఇవ్వలేదు.
+                అందువల్ల
+                ఆ రోజు డబ్బు రాలేదు.
+            </p>
+            <p>
+                కానీ రైతు మనసులో ఒక్కటే...
+            </p>
+            <p>
+                <strong>
+                    "ఈ రోజు
+                    పాపకి
+                    పది రూపాయలు
+                    ఎలా ఇవ్వాలి?"
+                </strong>
+            </p>
+            <p>
+                అనే ఆలోచన.
+            </p>
+            <p>
+                ఇంటికి వచ్చాక,
+                పాప అడిగింది...
+                <strong>
+                    "నాన్నా...
+                    నా పది రూపాయలు?"
+                </strong>
+            </p>
+            <p>
+                రైతు మెల్లగా అన్నాడు...
+                <strong>
+                    "ఈ రోజు ఆవు పాలు ఇవ్వలేదు అమ్మా...
+                    రేపు రెండు రోజులకు కలిపి ఇస్తాను."
+                </strong>
+            </p>
+            <p>
+                పాప నవ్వుతూ...
+                <strong>
+                    "పర్లేదు నాన్నా."
+                </strong>
+                అని చెప్పి...
+                <strong>
+                    "రండి...
+                    భోజనం చేద్దాం."
+                </strong>
+                అంటూ
+                ఆయన చేతిని పట్టుకుని తీసుకెళ్లింది.
+            </p>
+        </div>
+        <br>
+        <div class="story">
+            <h2 class="section-title">English</h2>
+            <p>
+                Once upon a time, in a small village, there lived a hardworking <mark class="gold">farmer</mark>.
+            </p>
+            <p>
+                Every day, he worked in his fields and took care of his cows, buffaloes, and goats to earn a living.
+            </p>
+            <p>
+                Farmers don't earn money until their crops are harvested.
+                But daily expenses never stop.
+            </p>
+            <p>
+                So he also grew coconuts, bananas, flowers, and vegetables, and sold milk to support his <mark
+                    class="orange">family</mark>.
+            </p>
+            <p>
+                Life was going on peacefully...
+                until one year,
+                there was no rain.
+            </p>
+            <p>
+                The crops failed,
+                and the farmer fell into great financial difficulty.
+            </p>
+            <hr>
+            <p>
+                One day,
+                his little <mark class="pink">daughter</mark> came to him and asked,
+            </p>
+            <p>
+                <strong>
+                    "Father...
+                    Will you buy me a bicycle?"
+                </strong>
+            </p>
+            <p>
+                The farmer felt helpless.
+                Still, with a gentle smile, he replied,
+            </p>
+            <p>
+                <strong>
+                    "Not now, my child...
+                    Next year, I will definitely buy one for you."
+                </strong>
+            </p>
+            <p>
+                But she wasn't ready to give up.
+            </p>
+            <p>
+                After thinking for a while,
+                the farmer smiled and said,
+            </p>
+            <blockquote>
+                "I'll buy you the bicycle...
+                but on one <mark class="gold">condition</mark>.
+                <br><br>
+                Every day,
+                after selling milk,
+                I'll give you
+                <mark class="blue">₹10</mark>.
+                <br><br>
+                When you save
+                <mark class="blue">₹3000</mark>,
+                we'll buy your bicycle."
+            </blockquote>
+            <p>
+                The little girl happily agreed.
+                Seeing her smile,
+                the father's heart became lighter,
+                and for a moment,
+                he forgot all his worries.
+            </p>
+            <hr>
+            <p>
+                Days passed...
+            </p>
+            <p>
+                Every day,
+                the father gave her money,
+                and she carefully saved every single rupee.
+            </p>
+            <p>
+                Then one day,
+                the cow didn't give milk.
+                There was no income that day.
+            </p>
+            <p>
+                Yet,
+                the father worried about only one thing...
+            </p>
+            <p>
+                <strong>
+                    "How will I give my daughter her ₹10 today?"
+                </strong>
+            </p>
+            <p>
+                When he returned home,
+                she innocently asked,
+            </p>
+            <p>
+                <strong>
+                    "Father...
+                    My ₹10?"
+                </strong>
+            </p>
+            <p>
+                He softly replied,
+            </p>
+            <p>
+                <strong>
+                    "The cow didn't give milk today...
+                    I'll give you tomorrow."
+                </strong>
+            </p>
+            <p>
+                She simply smiled and said,
+            </p>
+            <p>
+                <strong>
+                    "It's okay, Father...
+                    Come...
+                    Let's have dinner."
+                </strong>
+            </p>
+            <p>
+                ...and gently held his hand.
+            </p>
+            <hr>
+            <p>
+                Days continued...
+                Some days he could give money.
+                Some days he couldn't.
+            </p>
+            <p>
+                Finally,
+                the special day arrived.
+            </p>
+            <p>
+                She came with her savings of
+                <mark class="blue">₹3000</mark>
+                and joyfully said,
+            </p>
+            <p>
+                <strong>
+                    "Father...
+                    Let's buy the bicycle!"
+                </strong>
+            </p>
+            <p>
+                Together,
+                they went to the bicycle shop.
+            </p>
+            <p>
+                The bicycle cost
+                <mark class="blue">₹3500</mark>.
+                After seeing the beautiful bond between them,
+                the shopkeeper smiled
+                and agreed to sell it for
+                <mark class="blue">₹3300</mark>.
+            </p>
+            <p>
+                The little girl handed over her
+                <mark class="blue">₹3000</mark>.
+                The father quietly added his
+                <mark class="blue">₹300</mark>.
+            </p>
+            <p>
+                The moment she got her bicycle,
+                her face glowed with pure
+                <mark class="gold">happiness</mark>.
+            </p>
+            <p>
+                Seeing that smile,
+                the father's eyes filled with tears.
+            </p>
+            <hr>
+            <blockquote>
+                That day,
+                both of them learned something beautiful...
+                <br><br>
+                The father realized that
+                his daughter's <mark class="gold">happiness</mark>
+                was his greatest
+                <mark class="orange">wealth</mark>.
+                <br><br>
+                He realized that
+                no matter how many problems life brings,
+                an innocent child's
+                <mark class="pink">smile</mark>
+                can make every burden disappear.
+                <br><br>
+                The little girl learned the value of
+                <mark class="blue">saving money</mark>
+                to achieve her dreams.
+                <br><br>
+                She understood that
+                <mark class="gold">patience</mark>
+                and
+                <mark class="gold">discipline</mark>
+                are the keys to reaching our goals.
+                <br><br>
+                Most importantly,
+                she learned to value
+                her parents'
+                <mark class="orange">love</mark>
+                and
+                <mark class="orange">hard work</mark>.
+            </blockquote>
+        </div>
+    </div>
+    <a href="index.html" class="home">
+        ← Home
+    </a>
+</body>
+
+</html>>

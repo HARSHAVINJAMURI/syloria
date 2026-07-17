@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love of Mother | My Feelings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;500;700&family=Noto+Sans+Telugu:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Outfit, sans-serif;
+            background: #0b0b10;
+            color: #f5f5f5;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(circle at 10% 10%, rgba(255, 120, 120, .08), transparent 28%),
+                radial-gradient(circle at 85% 15%, rgba(255, 208, 120, .08), transparent 35%),
+                radial-gradient(circle at 50% 100%, rgba(255, 255, 255, .03), transparent 40%),
+                #0b0b10;
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px);
+            background-size: 6px 6px;
+            opacity: .35;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            width: min(1050px, 92%);
+            margin: 70px auto 120px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-family: "Cinzel Decorative", serif;
+            font-size: 58px;
+            color: #ffe5a8;
+            margin-bottom: 12px;
+        }
+
+        header h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 30px;
+            font-style: italic;
+            font-weight: 400;
+            color: #d8d8d8;
+        }
+
+        .cover {
+            margin: 50px auto;
+            border-radius: 24px;
+            overflow: hidden;
+            transition: .4s;
+        }
+
+        .cover img {
+            width: 100%;
+            display: block;
+            transition: .5s;
+        }
+
+        .cover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, .45);
+        }
+
+        .cover:hover img {
+            transform: scale(1.03);
+        }
+
+        .story {
+            background: rgba(255, 255, 255, .03);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 24px;
+            padding: 55px;
+            backdrop-filter: blur(14px);
+            transition: .35s;
+        }
+
+        .story:hover {
+            border-color: #ffb96a;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, .35);
+        }
+
+        .story h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 42px;
+            margin-bottom: 30px;
+            color: #ffd897;
+        }
+
+        .story p {
+            font-size: 18px;
+            line-height: 2.05;
+            margin-bottom: 24px;
+            color: #ececec;
+            text-align: justify;
+        }
+
+        blockquote {
+            border-left: 4px solid #ffbf69;
+            padding: 20px 30px;
+            margin: 40px 0;
+            background: rgba(255, 191, 105, .06);
+            border-radius: 10px;
+            line-height: 2;
+            color: #fff8ec;
+        }
+
+        .telugu {
+            margin-top: 70px;
+            font-family: "Noto Sans Telugu", sans-serif;
+        }
+
+        .telugu p {
+            font-size: 19px;
+        }
+
+        mark {
+            background: transparent;
+            padding: 0;
+            font-weight: 600;
+        }
+
+        .love {
+            color: #ff5c8a;
+        }
+
+        .care {
+            color: #61d6ff;
+        }
+
+        .thanks {
+            color: #ffd166;
+        }
+
+        .smile {
+            color: #ffe066;
+        }
+
+        .hug {
+            color: #ff9f68;
+        }
+
+        .time {
+            color: #7ce38b;
+        }
+
+        .family {
+            color: #b7a6ff;
+        }
+
+        .end {
+            text-align: center;
+            font-size: 26px;
+            font-family: "Cormorant Garamond", serif;
+            color: #ffd897;
+            margin-top: 60px;
+            line-height: 2;
+        }
+
+        .home {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            padding: 14px 28px;
+            background: #ffbf69;
+            color: #111;
+            text-decoration: none;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: .35s;
+        }
+
+        .home:hover {
+            background: white;
+            transform: translateY(-5px);
+        }
+
+        @media(max-width:768px) {
+            .story {
+                padding: 30px;
+            }
+
+            header h1 {
+                font-size: 40px;
+            }
+
+            header h3 {
+                font-size: 22px;
+            }
+
+            .story p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Love of Mother</h1>
+            <h3>A Mother's Love — The First Home Every Heart Knows.</h3>
+        </header>
+        <div class="cover">
+            <img src="image3.jpg">
+        </div>
+        <div class="story">
+            <h2>English</h2>
+            <p>A boy lives in a village. Every morning he leaves for school and returns home in the evening. In the
+                afternoon, he comes home for lunch.</p>
+            <p>Every day, his mother serves him food with care, and he eats quickly before returning to school. But one
+                day, his mother went to his grandmother's house. Before leaving, she told him to eat on time, take care
+                of his health, and said she would return by evening 🌆.</p>
+            <p>As usual, he came home for lunch. He sat down, waiting for his meal—but there was no one there to serve
+                him. Then he remembered that his mother had gone to his grandmother's house.</p>
+            <p>He brought a plate, a glass, water, rice 🍚, searched for the spoon 🥄, looked for the curry 🍛, called
+                his mother from the landline, searched again, finally found everything, brought curd and salt 🧂 and
+                served himself.</p>
+            <p>It took him nearly twenty minutes just to prepare his own meal before he finally started eating.</p>
+            <blockquote>
+                His mother runs through the cycle of life every single day—not just for herself, but for the entire
+                <mark class="family">family</mark>.
+                Without her, even the smallest tasks become difficult.
+                His eyes filled with tears.
+                Even while leaving home, she had prepared food for him.
+                That is how much she <mark class="love">loves</mark> him.
+                How deeply she <mark class="care">cares</mark> for him.
+                How important he is to her.
+            </blockquote>
+            <p>He finished his meal and returned to school.</p>
+            <p>When he came home in the evening, just as she had promised, she was already there. He quietly walked to
+                her and hugged her tightly 🫂.</p>
+            <p>That embrace held his <mark class="thanks">thanks</mark>, his apology, and his innocent <mark
+                    class="love">love</mark>.</p>
+            <p>Living for ourselves is fine, but living for the people we love gives true meaning to life.</p>
+            <p>Mothers love their children. They love their families. We are always their first priority.</p>
+            <p>All they expect from us is just a spoonful of <mark class="love">love</mark>.</p>
+            <p>They want us to be happy. They want us to take care of ourselves.</p>
+            <p>All we can give them in return is a little <mark class="time">time</mark>, a genuine <mark
+                    class="smile">smile</mark>, and a warm <mark class="hug">hug</mark> 🫂.</p>
+            <p><strong>Never hurt your mother.</strong></p>
+        </div><br>
+        <div class="story">
+            <div class="telugu">
+                <h2>తెలుగు</h2>
+                <p>ఒక చిన్న అబ్బాయి గ్రామంలో నివసించేవాడు. ప్రతి ఉదయం పాఠశాలకు వెళ్లి సాయంత్రం ఇంటికి తిరిగి వచ్చేవాడు.
+                    మధ్యాహ్నం భోజనం కోసం ఇంటికి వచ్చేవాడు.</p>
+                <p>ప్రతి రోజూ అతని తల్లి ప్రేమగా భోజనం వడ్డించేది. కానీ ఒక రోజు ఆమె అమ్మమ్మ ఇంటికి వెళ్లింది. వెళ్లే
+                    ముందు సమయానికి భోజనం చేయమని, ఆరోగ్యం జాగ్రత్తగా చూసుకోవాలని, సాయంత్రానికి వస్తానని చెప్పింది 🌆.</p>
+                <p>అతను భోజనం కోసం కూర్చున్నాడు. కానీ అమ్మ లేదు. తానే ప్లేట్, గ్లాస్, నీళ్లు, అన్నం, గరిటె 🥄, కూర 🍛,
+                    పెరుగు, ఉప్పు 🧂 అన్నీ వెతుక్కుంటూ వడ్డించుకున్నాడు.</p>
+                <p>తనకు తానే భోజనం వడ్డించుకోవడానికి దాదాపు పదిహేను నిమిషాలు పట్టింది.</p>
+                <blockquote>
+                    ఆమె ప్రతి రోజూ తన జీవితానికే కాదు, మొత్తం <mark class="family">కుటుంబం</mark> జీవితానికీ
+                    పరుగెడుతోంది.
+                    ఆమె లేకుండా చిన్న చిన్న పనులు కూడా కష్టంగా మారిపోతాయి.
+                    ఆమె అతనిపై ఉన్న <mark class="love">ప్రేమ</mark> ఎంత గొప్పదో...
+                    ఆమె ఎంత <mark class="care">ఆప్యాయంగా చూసుకుంటుందో</mark>...
+                    అతను ఆమెకు ఎంత ముఖ్యమో...
+                    అతని కళ్లలో నీళ్లు తిరిగాయి.
+                </blockquote>
+                <p>సాయంత్రం ఇంటికి వచ్చేసరికి, ఆమె అప్పటికే ఇంట్లో ఉంది. అతను వెళ్లి బిగిగా హత్తుకున్నాడు 🫂.</p>
+                <p>ఆ హత్తులో అతని <mark class="thanks">కృతజ్ఞత</mark>, <mark class="love">ప్రేమ</mark>, నిర్మలమైన మనసు
+                    ఉన్నాయి.</p>
+                <p>మన కోసం మాత్రమే జీవించడం సరే. కానీ మన వాళ్ల కోసం జీవించడం జీవితానికి నిజమైన అర్థం ఇస్తుంది.</p>
+                <p>తల్లులు తమ పిల్లలను ప్రేమిస్తారు. తమ కుటుంబాన్ని ప్రేమిస్తారు. మనమే వారి మొదటి ప్రాధాన్యత.</p>
+                <p>వాళ్లు మన నుండి కోరుకునేది ఒక చెంచాడు <mark class="love">ప్రేమ</mark> మాత్రమే.</p>
+                <p>మనము ఇవ్వగలిగేది కొంచెం <mark class="time">సమయం</mark>, ఒక స్వచ్ఛమైన <mark
+                        class="smile">చిరునవ్వు</mark>, ఇవ్వగలిగినంత <mark class="hug">ప్రేమతో కూడిన హత్తు</mark> 🫂.
+                </p>
+                <p><strong>ఎప్పుడూ మీ తల్లిని బాధ పెట్టకండి.</strong></p>
+            </div>
+            <div class="end">
+                With <span class="love">Love</span> for my Mother ❤️
+                <br><br>
+                — Harsha Vinjamuri
+            </div>
+        </div>
+    </div>
+    <a href="index.html" class="home">← Home</a>
+</body>
+
+</html>
