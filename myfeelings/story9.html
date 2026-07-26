@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEPRESSION | My Feelings</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Outfit, sans-serif;
+            background: #0b0b10;
+            color: #f5f5f5;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(circle at 10% 10%, rgba(255, 120, 120, .08), transparent 28%),
+                radial-gradient(circle at 85% 15%, rgba(255, 208, 120, .08), transparent 35%),
+                radial-gradient(circle at 50% 100%, rgba(255, 255, 255, .03), transparent 40%),
+                #0b0b10;
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image:
+                radial-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px);
+            background-size: 6px 6px;
+            opacity: .35;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            width: min(1000px, 92%);
+            margin: 70px auto 120px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        header h1 {
+            font-family: "Cinzel Decorative", serif;
+            font-size: 58px;
+            color: #ffe5a8;
+            margin-bottom: 18px;
+            letter-spacing: 2px;
+        }
+
+        header h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 30px;
+            font-style: italic;
+            font-weight: 400;
+            color: #d8d8d8;
+        }
+
+        .story {
+            background: rgba(255, 255, 255, .03);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 24px;
+            padding: 60px;
+            backdrop-filter: blur(16px);
+            transition: .35s;
+        }
+
+        .story:hover {
+            border-color: #ffb96a;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, .35);
+        }
+
+        .story p {
+            font-size: 18px;
+            line-height: 2.1;
+            margin-bottom: 24px;
+            text-align: justify;
+            color: #ececec;
+        }
+
+        .story h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 38px;
+            margin: 45px 0 30px;
+            color: #ffd897;
+        }
+
+        .quote {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 27px;
+            line-height: 1.8;
+            text-align: center;
+            color: #ffe5b0;
+            margin-bottom: 45px;
+            font-style: italic;
+        }
+
+        .question {
+            font-size: 24px;
+            font-family: "Cormorant Garamond", serif;
+            color: #ffe2aa;
+            margin: 28px 0;
+            text-align: center;
+            line-height: 1.8;
+            font-weight: 600;
+        }
+
+        mark {
+            background: none;
+            padding: 0;
+            font-weight: 600;
+        }
+
+        .gold {
+            color: #ffd166;
+        }
+
+        .orange {
+            color: #ffb86c;
+        }
+
+        .blue {
+            color: #8fd3ff;
+        }
+
+        .pink {
+            color: #b70a43;
+        }
+
+        .red {
+            color: #b30000;
+        }
+        .green{
+            color: #057904;
+        }
+        .grey{
+            color:grey
+        }
+        .white{
+            color: #fff;
+        }
+
+        .home {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            padding: 14px 28px;
+            background: #ffbf69;
+            color: #111;
+            text-decoration: none;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: .35s;
+        }
+
+        .home:hover {
+            background: white;
+            transform: translateY(-5px);
+        }
+
+        @media(max-width:768px) {
+
+            .story {
+                padding: 35px;
+            }
+
+            header h1 {
+                font-size: 42px;
+            }
+
+            header h3 {
+                font-size: 22px;
+            }
+
+            .story p {
+                font-size: 16px;
+            }
+
+            .question {
+                font-size: 20px;
+            }
+
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+<header>
+    <h1>Meaning of Home</h1>
+    <h3>జ్ఞాపకాలు ఊపిరి పోసుకునే చోటు</h3>
+</header>
+
+<div class="story">
+
+<h2 class="section-title telugu">ఇల్లు అంటే...</h2>
+
+<p class="telugu">
+    ఇల్లు అంటే...<br>
+నాలుగు గోడలు,<br>
+మూడు గదులు,<br>
+రెండు కిటికీలు,<br>
+ఒక గుమ్మం......<br>
+ఇవి కావు ఇల్లు అంటే...
+</p>
+
+<blockquote class="telugu">
+
+<p>
+ప్రతి ఉదయం - <strong><mark class="pink">"లేచావా"</mark></strong>? అని పలికే పిలుపు.
+</p>
+
+<p>
+ప్రతి సాయంత్రం - <strong><mark class="pink">"వచ్చావా"</mark></strong>? అని వెతికే చూపు.
+</p>
+
+<p>
+ప్రతి అడుగులో - <strong><mark class="pink">"నేనున్నా"</mark></strong> అని నడిపే ధైర్యం.
+</p>
+
+<p>
+ప్రతి కథలో... <strong><mark class="green">కాలం</mark></strong> నేర్పిన పాఠం.
+</p>
+
+<p>
+ప్రతి మాటలో... <strong><mark class="green">అనుభవం</mark></strong> రాసిన అక్షరం.
+</p>
+
+<p>
+ప్రతి ముద్దలో... <strong><mark class="green">మనసు</mark></strong> నింపిన మమకారం.
+</p>
+
+<p>
+ప్రతి జోలలో... <strong><mark class="green">ప్రేమ</mark></strong> పంచిన పరవశం.
+</p>
+
+</blockquote>
+
+<p class="telugu">
+తెల్లవారిందంటే... ముందుగా మేల్కొనేది ఇల్లు
+</p>
+
+<p class="telugu">
+గుమ్మం ముందున్న ముగ్గు మంగళం,<br>
+గాలిలో కలిసే సాంబ్రాణి పరిమళం,
+</p>
+
+<p class="telugu">
+తులసి కోట చుట్టూ వెలిగే దీపం,<br>
+దూరంగా వినిపించే గుడిగంటల నాదం,
+</p>
+
+<p class="telugu">
+మేడమీద చిలుకల సంగీతం,<br>
+ఇల్లంతా పలికే సుప్రభాతం,
+</p>
+
+<p class="telugu">
+వాకిట్లో విరిసిన మందారం,<br>
+పెరట్లో పూసిన కనకాంబరం,
+</p>
+
+<p class="telugu">
+మట్టి నేల చల్లదనం,<br>
+వంటింటి పొయ్యి వెచ్చదనం,
+</p>
+
+<p class="telugu">
+అరుగు మీద మంచు చినుకుల అలంకారం,<br>
+మేడ అంచులపై మెల్లగా జారే సూర్యకిరణం,
+</p>
+
+<p class="telugu">
+నిద్ర వీడుతున్న నిశ్శబ్దం,<br>
+అదే ఆ ఇంటి శుభోదయం.
+</p>
+
+<p class="telugu">
+<strong>"లేవండిరా..."</strong>
+అనే
+<strong><mark class="red">అమ్మ</mark></strong>
+పిలుపుతో,
+నిద్ర మెల్లగా జారిపోతుంది.
+</p>
+
+<p class="telugu">
+పొయ్యి పొగతో పొద్దు మొదలవుతుంది.
+</p>
+
+<p class="telugu">
+తన అడుగుల సవ్వడితో ఇల్లంతా మేల్కొంటుంది.
+</p>
+
+<p class="telugu">
+ఎన్ని బాధ్యతలున్నా...
+</p>
+
+<p class="telugu">
+తన అలసటను గుమ్మం దాటనివ్వకుండా,
+</p>
+
+<p class="telugu">
+అందరి అవసరాల కోసం తన జీవితాన్ని అంకితం చేసే
+<strong><mark class="blue">నాన్న</mark></strong>.
+</p>
+
+<p class="telugu">
+ఆ వైపు...
+</p>
+
+<p class="telugu">
+చేతిలో వార్తాపత్రిక,
+ముక్కుపై కళ్లద్దాలు,
+</p>
+
+<p class="telugu">
+మధ్య మధ్యలో దేశం గురించి,
+జీవితం గురించి,
+</p>
+
+<p class="telugu">
+ఒక్కో మాటలో ఒక్కో పాఠం చెప్పే
+<strong><mark class="gold">తాతయ్య</mark></strong>.
+</p>
+
+<p class="telugu">
+వంటింట్లోకి తొంగి చూసి...
+</p>
+
+<p class="telugu">
+<strong>"ఉప్పు కొంచెం తగ్గించమ్మా..."</strong>
+అని అంటూనే,
+</p>
+
+<p class="telugu">
+మనవడి చేతిలో తొలి వేడి ముద్దను అందించే
+<strong><mark class="orange">బామ్మ</mark></strong>.
+</p>
+
+<p class="telugu">
+పుస్తకాల సంచుల కోసం వెతికే
+<strong>పిల్లలు</strong>,
+</p>
+
+<p class="telugu">
+జడలు వేస్తున్న
+<strong><mark class="gold">అక్క</mark></strong>,
+</p>
+
+<p class="telugu">
+బూట్లు కోసం ఇల్లంతా తిరిగే
+<strong><mark class="blue">తమ్ముడు</mark></strong>,
+</p>
+
+<p class="telugu">
+<strong>"త్వరగా రా... ఆలస్యమవుతుంది!"</strong>
+అనే హడావుడి.
+</p>
+
+<p class="telugu">
+ఆ హడావుడిలోనే...
+<strong><mark class="grey">ఇల్లు నవ్వుతుంది.</mark></strong>
+</p>
+
+<p class="telugu">
+ఆ సందడిలోనే...
+<strong><mark class="grey">ఇల్లు ఊపిరి పోసుకుంటుంది.</mark></strong>
+</p>
+
+<p class="telugu">
+ఎందుకంటే...
+ఇల్లు అంటే...
+</p>
+
+<p class="telugu">
+<strong><mark class="blue">కలిసి ఉండే మనుషులు కాదు</mark></strong>,
+<strong><mark class="red">కలబోసుకున్న మనసులు.</mark></strong>
+</p>
+
+<blockquote class="telugu">
+
+<p>
+ఇల్లు అంటే...
+</p>
+
+<p>
+రక్షణ నిలయం,
+</p>
+
+<p>
+ప్రేమల వలయం,
+</p>
+
+<p>
+మమతల సదయం,
+</p>
+
+<p>
+జ్ఞాపకాల ఉదయం,
+</p>
+
+<p>
+నవ్వుల విజయం,
+</p>
+
+<p>
+బంధాల ఆలయం,
+</p>
+
+<p>
+కన్నీటి ప్రళయం,
+</p>
+
+<p>
+అనురాగ హృదయం,
+</p>
+
+<p>
+ఆత్మీయ ఆశ్రయం,
+</p>
+
+<p>
+సంస్కార సాన్నిధ్యం,
+</p>
+
+<p>
+మనసుల మాధుర్యం,
+</p>
+
+<p>
+జీవన సౌభాగ్యం.
+</p>
+
+</blockquote>
+
+<blockquote class="telugu">
+
+<p>
+నాన్న బాధ్యతకి,
+<strong>అమ్మ ప్రేమకి</strong>,
+</p>
+
+<p>
+తాతయ్య అనుభవాలకి,
+<strong>బామ్మ కథలకి</strong>,
+</p>
+
+<p>
+మావయ్య మమకారానికి,
+<strong>అత్తయ్య అనుబంధానికి</strong>,
+</p>
+
+<p>
+పిన్ని పలకరింపుకి,
+<strong>బాబాయి భరోసాకి</strong>,
+</p>
+
+<p>
+అమ్మమ్మ లాలనకి,
+<strong>తాతయ్య దీవెనలకి</strong>,
+</p>
+
+<p>
+అన్నయ్య సలహాకి,
+<strong>చెల్లమ్మ అల్లరికి</strong>,
+</p>
+
+<p>
+అక్క ఆదరణకి,
+<strong>తమ్ముడి చమత్కారానికి</strong>,
+</p>
+
+<p>
+ఇల్లు అనే పదానికి అర్థం.
+</p>
+
+</blockquote>
+
+<p class="telugu">
+ఇల్లు అంటే...
+</p>
+
+<p class="telugu">
+పెద్దల ఆశీర్వాదం,
+పిల్లల అనుబంధం,
+కుటుంబ సంబంధం.
+</p>
+
+<blockquote class="telugu">
+
+<p>
+ఇల్లు అంటే...
+</p>
+
+<p>
+<mark class="blue">
+తరతరాలుగా నిలిచే
+<strong>సంస్కృతి సంప్రదాయాలు</strong>,
+</mark>
+</p>
+
+<p>
+<mark class="blue">
+అనువనువు పలికే
+<strong>ప్రేమనురాగాలు</strong>,
+</mark>
+</p>
+
+<p>
+    <mark class="blue">
+మనసుల్ని ముడివేసే
+<strong>ఆత్మాభిమానాలు</strong>.
+</mark>
+</p>
+
+</blockquote>
+
+<p class="telugu">
+ఇల్లు అంటే...
+<strong>ఆలయం</></strong>,
+<strong>ఆశ్రయం</mark></strong>,
+<strong>ఆవాసం</mark></strong>.
+</p>
+
+<p class="telugu">
+ఇల్లు అంటే
+<strong><mark class="white">స్వేచ్ఛ</mark></strong>,
+ఇల్లు అంటే
+<strong><mark class="white">సంతోషం</mark></strong>.
+</p>
+
+<p class="telugu">
+ఇల్లు అంటే
+<strong><mark class="white">సంబరం</mark></strong>,
+ఇల్లు అంటే
+<strong><mark class="white">సంస్కారం</mark></strong>.
+</p>
+
+<p class="telugu">
+ఇల్లు అంటే
+<strong><mark class="white">సంస్కృతి</mark></strong>,
+ఇల్లు అంటే
+<strong><mark class="white">సంప్రదాయం</mark></strong>.
+</p>
+
+<p class="telugu">
+ఇల్లు అంటే
+<strong><mark class="white">ఆనందం</mark></strong>,
+<strong><mark class="white">ఆరోగ్యం</mark></strong>,
+<strong><mark class="white">ఆప్యాయత</mark></strong>,
+<strong><mark class="white">అనురాగం</mark></strong>,
+<strong><mark class="white">ఆత్మీయత</mark></strong>,
+<strong><mark class="white">అనుబంధం</mark></strong>.
+</p>
+
+<blockquote class="telugu">
+
+<p>
+ఇల్లు అంటే…
+</p>
+
+<p>
+నమ్మకానికి నిలయం,
+</p>
+
+<p>
+ప్రేమకు చిరునామా,
+</p>
+
+<p>
+ధైర్యానికి మొదటి అడుగు.
+</p>
+
+</blockquote>
+
+<p class="telugu">
+అందుకే...
+ఇల్లు అంటే
+<strong><mark class="red">జీవితం.</mark></strong>
+</p>
+
+<p class="telugu" style="margin-top:60px;text-align:right;font-size:22px;">
+
+<strong>— హర్ష వింజమూరి</strong>
+
+</p>
+
+</div>
+
+</div>
+
+<a href="index.html" class="home">
+    ← Home
+</a>
+
+</body>
+
+</html>
