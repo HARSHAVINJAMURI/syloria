@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,15 +16,18 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         html {
             scroll-behavior: smooth;
         }
+
         body {
             font-family: Outfit, sans-serif;
             background: #050912;
             color: white;
             overflow-x: hidden;
         }
+
         body::before {
             content: "";
             position: fixed;
@@ -35,30 +39,36 @@
                 #050912;
             z-index: -2;
         }
+
         header {
             padding: 80px 30px 60px;
             text-align: center;
         }
+
         header h1 {
             font-family: "Cormorant Garamond";
             font-size: 68px;
             letter-spacing: 5px;
             font-weight: 500;
         }
+
         header p {
             margin-top: 12px;
             color: #9AA5B8;
             font-size: 17px;
         }
+
         .about {
             padding: 100px 20px 70px;
             display: flex;
             justify-content: center;
         }
+
         .about-container {
             max-width: 920px;
             text-align: justify;
         }
+
         .about-tag {
             display: inline-block;
             margin-bottom: 18px;
@@ -66,6 +76,7 @@
             font-size: 13px;
             color: #79C8FF;
         }
+
         .about h3 {
             font-family: "Cormorant Garamond";
             font-size: 56px;
@@ -73,16 +84,19 @@
             margin-bottom: 28px;
             line-height: 1.2;
         }
+
         .about p {
             color: #98A5BA;
             font-size: 18px;
             line-height: 2;
             margin-bottom: 24px;
         }
+
         .about strong {
             color: white;
             font-weight: 500;
         }
+
         /* Navigation */
         /* .category-nav {
             position: sticky;
@@ -123,6 +137,7 @@
             z-index: 100;
             padding: 18px 20px;
         }
+
         .category-nav ul {
             list-style: none;
             display: flex;
@@ -131,6 +146,7 @@
             gap: 18px;
             flex-wrap: wrap;
         }
+
         .category-nav a {
             text-decoration: none;
             color: #C8D4E8;
@@ -141,30 +157,36 @@
             transition: .35s;
             font-size: 15px;
         }
+
         .category-nav a:hover {
             background: rgba(121, 200, 255, .15);
             border-color: #79C8FF;
             color: #79C8FF;
             transform: translateY(-3px);
         }
+
         .gallery-section {
             padding: 90px 20px 40px;
         }
+
         .section-header {
             text-align: center;
             margin-bottom: 55px;
         }
+
         .section-header span {
             color: #79C8FF;
             letter-spacing: 4px;
             font-size: 13px;
         }
+
         .section-header h2 {
             margin-top: 15px;
             font-family: "Cormorant Garamond";
             font-size: 56px;
             font-weight: 500;
         }
+
         .section-header p {
             max-width: 700px;
             margin: 18px auto 0;
@@ -172,6 +194,7 @@
             line-height: 1.9;
             font-size: 17px;
         }
+
         .gallery {
             max-width: 1450px;
             margin: auto;
@@ -179,6 +202,7 @@
             column-gap: 18px;
             padding: 0 20px;
         }
+
         .card {
             break-inside: avoid;
             margin-bottom: 18px;
@@ -188,17 +212,21 @@
             cursor: pointer;
             transition: .35s;
         }
+
         .card img {
             width: 100%;
             display: block;
             transition: .45s;
         }
+
         .card:hover {
             transform: translateY(-6px);
         }
+
         .card:hover img {
             transform: scale(1.03);
         }
+
         /* Lightbox */
         .lightbox {
             position: fixed;
@@ -210,15 +238,18 @@
             align-items: center;
             z-index: 999;
         }
+
         .lightbox.active {
             display: flex;
         }
+
         .lightbox img {
             max-width: 90vw;
             max-height: 90vh;
             border-radius: 16px;
             box-shadow: 0 25px 60px rgba(0, 0, 0, .45);
         }
+
         .close {
             position: absolute;
             top: 25px;
@@ -226,6 +257,7 @@
             font-size: 42px;
             cursor: pointer;
         }
+
         #downloadBtn {
             position: absolute;
             top: 30px;
@@ -237,18 +269,21 @@
             text-decoration: none;
             font-weight: 600;
         }
+
         .contact {
             padding: 140px 20px;
             max-width: 900px;
             margin: auto;
             text-align: center;
         }
+
         .contact h2 {
             font-family: "Cormorant Garamond";
             font-size: 62px;
             font-weight: 500;
             margin-bottom: 25px;
         }
+
         .contact p {
             max-width: 650px;
             margin: auto;
@@ -257,12 +292,14 @@
             line-height: 1.9;
             margin-bottom: 60px;
         }
+
         .contact-links {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 18px;
         }
+
         .contact-links a {
             padding: 14px 26px;
             border-radius: 40px;
@@ -272,33 +309,41 @@
             background: rgba(255, 255, 255, .03);
             transition: .35s;
         }
+
         .contact-links a:hover {
             background: #79C8FF;
             color: #050912;
             transform: translateY(-5px);
         }
+
         @media(max-width:900px) {
             header h1 {
                 font-size: 48px;
             }
+
             .gallery {
                 columns: 2 250px;
             }
+
             .section-header h2 {
                 font-size: 42px;
             }
         }
+
         @media(max-width:768px) {
             .about {
                 padding: 70px 25px 50px;
             }
+
             .about h3 {
                 font-size: 40px;
             }
+
             .about p {
                 font-size: 16px;
             }
         }
+
         @media(max-width:600px) {
             .gallery {
                 columns: 1;
@@ -306,6 +351,7 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>SKY COLLECTION</h1>
@@ -422,13 +468,63 @@
         =========================================== */
         const cloudImages = [
             // "image_public_id",
+            "3c655303-f152-4df0-ae73-ed9fa6cce563_itu2yi",
+            "d004947e-f160-4bf5-847e-91ee6a5ebbcd_ymhp6d",
+            "IMG_20241026_163523_pwhhnv",
+            "IMG20220917121043_kk6ee0",
+            "IMG20230601164901_ux9i70",
+            "IMG20230601164913_qpqwgs",
+            "IMG20230601173718_z8vylv",
+            "IMG20230610182140-ANIMATION_imfo48",
+            "IMG20230628054421_axahdk",
+            "IMG20230628054424_aicwmu",
+            "IMG20230628054427_fjns4j",
+            "IMG20230701182833_eb1m2q",
+            "IMG20230701182855_qmbkar",
+            "IMG20230803141427_qtykqa",
+            "IMG20230803142101_skcpq1",
+            "IMG20230805125731_utaxch",
+            "IMG20231225125824_khecge",
+            "IMG20240111071931_dyjlfq",
+            "IMG20240111072241_b83soz",
+            "IMG20240126163504_v5cdae",
+            "IMG20240215180930_wuynqv",
+            "IMG20240327183026_ejxmuo",
+            "IMG20240517061902_y4xp1d",
+            "IMG20240517074512_nllgxk",
+            "IMG20240519120439_z7zvig",
+            "IMG20240519120513_bzg2ef",
+            "IMG20240607180303-PANO_lhejnb",
+            "IMG20240607180306_e0ukqo",
+            "IMG20240607181059_vpnonk",
+            "IMG20240607181100_vp5owz",
+            "IMG20240727062813_xlfnte",
+            "IMG20240727063444_nf1n46",
+            "IMG20240727064214_xf9oau",
+            "IMG20240727064420_ilabbm",
+            "IMG20240727064427_ujxlei",
+            "IMG20240914073027_kcdpdb",
+            "IMG20241002170204_hclky9",
+            "IMG20241026163713_q5d6c4",
+            "IMG20250412170209_fopjvv",
+            "IMG20250517171119_vc8k1t",
+            "IMG20250519174403_oz0l2v",
+            "IMG20250928105506_xkof27",
+            "IMG20260507181542_cfcfpw",
+            "IMG20260507182005_ajramo",
+            "IMG20260507182023_kjoq58",
+            "IMG20260507182053_a9mjdd",
+            "IMG20260507182248_jlgqju",
+            "IMG20260507182751_p8rskn",
+            "IMG20260507182719_hdehxd",
+            "IMG20260507183148_nw1wps",
         ];
         /* ===========================================
            COLOR SKY
         =========================================== */
         const colorSkyImages = [
             // "image_public_id",
-             "IMG20240316183635_r1klbs",
+            "IMG20240316183635_r1klbs",
             "IMG20240316183707_r5yrzq",
             "IMG20230826180451_btix4m",
             "IMG20230514181546_hqdq29",
@@ -670,4 +766,5 @@
         });
     </script>
 </body>
+
 </html>
