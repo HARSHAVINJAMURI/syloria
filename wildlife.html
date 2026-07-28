@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildlife Collection | Syloria</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Outfit, sans-serif;
+            background: #050912;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            background:
+                radial-gradient(circle at 15% 15%, rgba(38, 166, 91, .28), transparent 30%),
+                radial-gradient(circle at 85% 10%, rgba(205, 220, 57, .18), transparent 30%),
+                radial-gradient(circle at 50% 100%, rgba(76, 175, 80, .10), transparent 45%),
+                #050912;
+        }
+
+        header {
+            padding: 90px 30px 70px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: "Cormorant Garamond";
+            font-size: 72px;
+            letter-spacing: 5px;
+            font-weight: 600;
+        }
+
+        header p {
+            margin-top: 18px;
+            color: #a8b3c6;
+            font-size: 18px;
+        }
+
+        .about {
+            padding: 90px 25px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-container {
+            max-width: 920px;
+            text-align: justify;
+        }
+
+        .about-tag {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #79e69b;
+            letter-spacing: 5px;
+            font-size: 13px;
+        }
+
+        .about h2 {
+            font-family: "Cormorant Garamond";
+            font-size: 56px;
+            font-weight: 500;
+            margin-bottom: 28px;
+        }
+
+        .about p {
+            color: #a8b3c6;
+            font-size: 18px;
+            line-height: 2;
+            margin-bottom: 25px;
+        }
+
+        .about strong {
+            color: white;
+            font-weight: 500;
+        }
+
+        .category-nav {
+            position: sticky;
+            top: 0;
+            z-index: 500;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 18px 20px;
+            /* backdrop-filter: blur(18px); */
+            /* background: rgba(5, 9, 18, .78); */
+            /* border-top: 1px solid rgba(255, 255, 255, .05); */
+            /* border-bottom: 1px solid rgba(255, 255, 255, .05); */
+        }
+
+        .category-nav button {
+            padding: 14px 28px;
+            border-radius: 40px;
+            border: 1px solid rgba(255, 255, 255, .08);
+            background: rgba(255, 255, 255, .04);
+            color: white;
+            font-family: Outfit;
+            font-size: 15px;
+            cursor: pointer;
+            transition: .35s;
+        }
+
+        .category-nav button:hover {
+            transform: translateY(-4px);
+            background: #79e69b;
+            color: #050912;
+        }
+
+        .category-nav button.active {
+            background: #79e69b;
+            color: #050912;
+            box-shadow: 0 10px 35px rgba(121, 230, 155, .25);
+        }
+
+        @media(max-width:768px) {
+            header h1 {
+                font-size: 48px;
+            }
+
+            .about {
+                padding: 70px 25px;
+            }
+
+            .about h2 {
+                font-size: 40px;
+            }
+
+            .about p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>WILDLIFE COLLECTION</h1>
+        <p>
+            Discover the untamed beauty where every creature and every leaf tells a story.
+        </p>
+    </header>
+    <section class="about">
+        <div class="about-container">
+            <span class="about-tag">
+                ABOUT THE GALLERY
+            </span>
+            <h2>
+                Nature speaks quietly to those who choose to observe.
+            </h2>
+            <p>
+                Wildlife is more than animals wandering through forests.
+                It is found in the tiny wings of an insect, the silent strength of a bird,
+                the textures of leaves, and the endless shades of green that surround life.
+                Every photograph here reflects a moment where nature paused just long enough
+                for me to preserve it.
+            </p>
+            <p>
+                This collection is thoughtfully divided into three categories—
+                <strong>Animals</strong>,
+                <strong>Flies</strong>,
+                and
+                <strong>Greenery</strong>,
+                allowing every visitor to explore a different side of the natural world.
+            </p>
+        </div>
+    </section>
+    <nav class="category-nav">
+        <button class="active" data-category="animals">
+            🦌 Animals
+        </button>
+        <button data-category="flies">
+            🦋 Flies
+        </button>
+        <button data-category="greenery">
+            🌿 Greenery
+        </button>
+    </nav>
+    <div class="gallery" id="gallery"></div>
+    <div class="lightbox" id="lightbox">
+        <span class="close">&times;</span>
+        <a id="downloadBtn" download target="_blank">
+            ⬇ Download
+        </a>
+        <img id="preview">
+    </div>
+    <section class="contact">
+        <h2>Let's Connect</h2>
+        <p>
+            Whether you'd like to collaborate,
+            inquire about prints,
+            or simply appreciate the beauty of nature together,
+            I'd love to hear from you.
+        </p>
+        <div class="contact-links">
+            <a href="https://www.instagram.com/im_harshhaa/" target="_blank">
+                Instagram
+            </a>
+            <a href="mailto:vinjamuriharsha123@gmail.com">
+                Email
+            </a>
+            <a href="https://www.linkedin.com/in/harshavinjamuri/" target="_blank">
+                LinkedIn
+            </a>
+        </div>
+    </section>
+    <style>
+        .gallery {
+            max-width: 1450px;
+            margin: auto;
+            columns: 4 300px;
+            column-gap: 18px;
+            padding: 45px 30px 100px;
+        }
+
+        .card {
+            break-inside: avoid;
+            margin-bottom: 18px;
+            overflow: hidden;
+            border-radius: 18px;
+            background: #111827;
+            cursor: pointer;
+            transition: .35s;
+        }
+
+        .card img {
+            width: 100%;
+            display: block;
+            transition: .45s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        .card:hover img {
+            transform: scale(1.03);
+        }
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .93);
+            backdrop-filter: blur(12px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 18px;
+        }
+
+        .close {
+            position: absolute;
+            right: 40px;
+            top: 22px;
+            font-size: 42px;
+            cursor: pointer;
+        }
+
+        #downloadBtn {
+            position: absolute;
+            left: 35px;
+            top: 28px;
+            background: white;
+            color: black;
+            padding: 12px 24px;
+            border-radius: 35px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact {
+            padding: 140px 20px;
+            text-align: center;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .contact h2 {
+            font-family: "Cormorant Garamond";
+            font-size: 60px;
+            font-weight: 500;
+            margin-bottom: 22px;
+        }
+
+        .contact p {
+            color: #a8b3c6;
+            line-height: 1.9;
+            font-size: 18px;
+            margin-bottom: 60px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            padding: 14px 26px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .08);
+            transition: .35s;
+        }
+
+        .contact-links a:hover {
+            background: #79e69b;
+            color: #050912;
+            transform: translateY(-5px);
+        }
+
+        @media(max-width:900px) {
+            .gallery {
+                columns: 2 250px;
+            }
+        }
+
+        @media(max-width:600px) {
+            .gallery {
+                columns: 1;
+            }
+        }
+    </style>
+    <script>
+        const CLOUD_NAME = "dk7gnvr8h";
+        const FOLDER = "wildlife";
+        /* -------------------------
+           CATEGORY IMAGE ARRAYS
+        -------------------------- */
+        const animalImages = [
+            // Add Animal Cloudinary Public IDs
+        ];      
+        const flyImages = [
+            // "image_public_id",
+            "0f962f1f-88f3-4c2d-bd7f-63175b3c7861_z44bnv",
+            "5c2a69e9-a1ae-4435-8e50-4c0d94872fdc_ipjsqf",
+            "24d18afd-d525-4303-8c0a-25b601099ee7_puaihn",
+            "6a0f17ab-20a3-4ad5-97cc-5b7e963ba278_k3u0q4",
+            "470b4b6b-eaad-4c13-9789-fdc89efb7c4d_hz9xbw",
+            "2625a040-8dbd-4414-8fe4-f01cceadee16_yedfuy",
+            "305906b2-730e-4464-ad49-603baeaa0235_dj7cva",
+            "4091560d-844a-45d1-99fa-05bc5c150f9f_fowdym",
+            "bf20976b-affb-4005-a602-61da8980a633_ti2hwh",
+            "e400f7ca-4c7f-41e5-aceb-42fb36a49257_zdaik6",
+            "IMG20210904205048_loneru",
+            "IMG20210904205614_gvtj5f",
+            "IMG20220805094559_zahkuw",
+            "IMG20220805094740_ghz0gl",
+            "IMG20220822001051_xmnimy",
+            "IMG20220928130025_mwjicz",
+            "IMG20221029080630_ac5sbq",
+            "IMG20221121081316_uca9gw",
+            "IMG20221121081430_meqc8m",
+            "IMG20221121220826_sdkmow",
+            "IMG20221122201901_auxkos",
+            "IMG20221222115831_bnzjvy",
+            "IMG20230114092534_sfiwuk",
+            "IMG20230531153912-ANIMATION_xsjf9s",
+            "IMG20230531153929_i8elb8",
+            "IMG20230531153930_vnfd67",
+            "IMG20230531154006_tljjuh",
+            "IMG20230601101526_dmwsud",
+            "IMG20230602090038_l30lyo",
+            "IMG20230602090057_fkw0qx",
+            "IMG20230723083819_its6zx",
+            "IMG20230930105451_ew8s8q",
+            "IMG20230930105602_q4pwxw",
+            "IMG20230930105603_krx4zp",
+            "IMG20230930114454_fx4ljc",
+            "IMG20230930114454_2_fzg6oh",
+            "IMG20230930194400_fmnvpi",
+            "IMG20230930194428_v83zu4",
+            "IMG20230930194458_tmacpv",
+            "IMG20230930194533_vr4gkw",
+            "IMG20231028215156_mekuzo",
+            "IMG20231101195229_plggll",
+            "IMG20231112104506_reygva",
+            "IMG20240517070428_jouiqy",
+            "IMG20240609171940_upeldf",
+            "IMG20240517070430_puluwm",
+            "IMG20241002170037_cu2ygb",
+            "IMG20241009105729_zsos16",
+            "IMG20241101145544_besh0l",
+            "IMG20251117100655_vkqneq",
+            "IMG20221029080718_wf6yjh",
+
+        ];
+
+        const greeneryImages = [
+            // Add Trees / Plants / Nature Public IDs
+        ];
+        /* -------------------------
+           COLLECTIONS
+        -------------------------- */
+        const collections = {
+            animals: animalImages,
+            flies: flyImages,
+            greenery: greeneryImages
+        };
+        let images = [];
+        let current = 0;
+        const gallery = document.getElementById("gallery");
+        const lightbox = document.getElementById("lightbox");
+        const preview = document.getElementById("preview");
+        const downloadBtn = document.getElementById("downloadBtn");
+        function url(id) {
+            return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/${id}.jpg`;
+        }
+        function loadGallery(category) {
+            images = collections[category];
+            gallery.innerHTML = "";
+            images.forEach((id, index) => {
+                const card = document.createElement("div");
+                card.className = "card";
+                const img = new Image();
+                img.loading = "lazy";
+                img.src = url(id);
+                img.onload = () => img.style.opacity = 1;
+                img.onerror = () => card.remove();
+                card.appendChild(img);
+                card.onclick = () => open(index);
+                gallery.appendChild(card);
+            });
+        }
+        document.querySelectorAll(".category-nav button").forEach(button => {
+            button.onclick = () => {
+                document
+                    .querySelector(".category-nav .active")
+                    .classList.remove("active");
+                button.classList.add("active");
+                loadGallery(button.dataset.category);
+            };
+        });
+        loadGallery("animals");
+        function open(index) {
+            current = index;
+            show();
+            lightbox.classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+        function show() {
+            const src = url(images[current]);
+            preview.src = src;
+            downloadBtn.href = src;
+        }
+        function closeViewer() {
+            lightbox.classList.remove("active");
+            document.body.style.overflow = "";
+        }
+        function next() {
+            current = (current + 1) % images.length;
+            show();
+        }
+        function prev() {
+            current = (current - 1 + images.length) % images.length;
+            show();
+        }
+        document.querySelector(".close").onclick = closeViewer;
+        lightbox.onclick = e => {
+            if (e.target === lightbox) {
+                closeViewer();
+            }
+        };
+        document.addEventListener("keydown", e => {
+            if (!lightbox.classList.contains("active")) return;
+            if (e.key === "ArrowRight") {
+                next();
+            }
+            else if (e.key === "ArrowLeft") {
+                prev();
+            }
+            else if (e.key === "Escape") {
+                closeViewer();
+            }
+        });
+    </script>
+</body>
+
+</html>
