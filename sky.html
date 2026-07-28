@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky Collection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Cormorant+Garamond:wght@500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: Outfit, sans-serif;
+            background: #050912;
+            color: white;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(circle at 15% 10%, rgba(78, 148, 255, .25), transparent 35%),
+                radial-gradient(circle at 85% 15%, rgba(255, 132, 70, .18), transparent 30%),
+                radial-gradient(circle at 50% 100%, rgba(120, 82, 255, .14), transparent 45%),
+                #050912;
+            z-index: -2;
+        }
+        header {
+            padding: 80px 30px 60px;
+            text-align: center;
+        }
+        header h1 {
+            font-family: "Cormorant Garamond";
+            font-size: 68px;
+            letter-spacing: 5px;
+            font-weight: 500;
+        }
+        header p {
+            margin-top: 12px;
+            color: #9AA5B8;
+            font-size: 17px;
+        }
+        .about {
+            padding: 100px 20px 70px;
+            display: flex;
+            justify-content: center;
+        }
+        .about-container {
+            max-width: 920px;
+            text-align: justify;
+        }
+        .about-tag {
+            display: inline-block;
+            margin-bottom: 18px;
+            letter-spacing: 5px;
+            font-size: 13px;
+            color: #79C8FF;
+        }
+        .about h3 {
+            font-family: "Cormorant Garamond";
+            font-size: 56px;
+            font-weight: 500;
+            margin-bottom: 28px;
+            line-height: 1.2;
+        }
+        .about p {
+            color: #98A5BA;
+            font-size: 18px;
+            line-height: 2;
+            margin-bottom: 24px;
+        }
+        .about strong {
+            color: white;
+            font-weight: 500;
+        }
+        /* Navigation */
+        /* .category-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(18px);
+            background: rgba(7, 13, 25, .78);
+            border-top: 1px solid rgba(255, 255, 255, .05);
+            border-bottom: 1px solid rgba(255, 255, 255, .05);
+            padding: 18px 20px;
+        }
+        .category-nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+        .category-nav a {
+            text-decoration: none;
+            color: #C8D4E8;
+            padding: 12px 22px;
+            border-radius: 40px;
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .05);
+            transition: .35s;
+            font-size: 15px;
+        }
+        .category-nav a:hover {
+            background: #79C8FF;
+            color: #05111F;
+            transform: translateY(-3px);
+        } */
+        .category-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 18px 20px;
+        }
+        .category-nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+        .category-nav a {
+            text-decoration: none;
+            color: #C8D4E8;
+            padding: 12px 22px;
+            border-radius: 40px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, .08);
+            transition: .35s;
+            font-size: 15px;
+        }
+        .category-nav a:hover {
+            background: rgba(121, 200, 255, .15);
+            border-color: #79C8FF;
+            color: #79C8FF;
+            transform: translateY(-3px);
+        }
+        .gallery-section {
+            padding: 90px 20px 40px;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+        .section-header span {
+            color: #79C8FF;
+            letter-spacing: 4px;
+            font-size: 13px;
+        }
+        .section-header h2 {
+            margin-top: 15px;
+            font-family: "Cormorant Garamond";
+            font-size: 56px;
+            font-weight: 500;
+        }
+        .section-header p {
+            max-width: 700px;
+            margin: 18px auto 0;
+            color: #9AA5B8;
+            line-height: 1.9;
+            font-size: 17px;
+        }
+        .gallery {
+            max-width: 1450px;
+            margin: auto;
+            columns: 4 300px;
+            column-gap: 18px;
+            padding: 0 20px;
+        }
+        .card {
+            break-inside: avoid;
+            margin-bottom: 18px;
+            overflow: hidden;
+            border-radius: 18px;
+            background: #111827;
+            cursor: pointer;
+            transition: .35s;
+        }
+        .card img {
+            width: 100%;
+            display: block;
+            transition: .45s;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+        }
+        .card:hover img {
+            transform: scale(1.03);
+        }
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .94);
+            backdrop-filter: blur(12px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 16px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, .45);
+        }
+        .close {
+            position: absolute;
+            top: 25px;
+            right: 40px;
+            font-size: 42px;
+            cursor: pointer;
+        }
+        #downloadBtn {
+            position: absolute;
+            top: 30px;
+            left: 35px;
+            padding: 12px 22px;
+            border-radius: 40px;
+            background: white;
+            color: black;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .contact {
+            padding: 140px 20px;
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+        .contact h2 {
+            font-family: "Cormorant Garamond";
+            font-size: 62px;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+        .contact p {
+            max-width: 650px;
+            margin: auto;
+            color: #9AA5B8;
+            font-size: 18px;
+            line-height: 1.9;
+            margin-bottom: 60px;
+        }
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+        .contact-links a {
+            padding: 14px 26px;
+            border-radius: 40px;
+            text-decoration: none;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, .08);
+            background: rgba(255, 255, 255, .03);
+            transition: .35s;
+        }
+        .contact-links a:hover {
+            background: #79C8FF;
+            color: #050912;
+            transform: translateY(-5px);
+        }
+        @media(max-width:900px) {
+            header h1 {
+                font-size: 48px;
+            }
+            .gallery {
+                columns: 2 250px;
+            }
+            .section-header h2 {
+                font-size: 42px;
+            }
+        }
+        @media(max-width:768px) {
+            .about {
+                padding: 70px 25px 50px;
+            }
+            .about h3 {
+                font-size: 40px;
+            }
+            .about p {
+                font-size: 16px;
+            }
+        }
+        @media(max-width:600px) {
+            .gallery {
+                columns: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SKY COLLECTION</h1>
+        <p>
+            Above every horizon lies a different masterpiece waiting to be noticed.
+        </p>
+        <section class="about">
+            <div class="about-container">
+                <span class="about-tag">
+                    ABOUT THE GALLERY
+                </span>
+                <h3>
+                    Every glance upward tells a different story.
+                </h3>
+                <p>
+                    The sky is an ever-changing canvas painted with light, color, and
+                    emotion. Every sunrise promises a new beginning, every cloud tells
+                    its own story, every ray of sunlight brings warmth, and every sunset
+                    leaves behind memories worth holding onto.
+                </p>
+                <p>
+                    This gallery is thoughtfully organized into four collections —
+                    <strong>Clouds</strong>,
+                    <strong>Color Sky</strong>,
+                    <strong>Sun</strong>, and
+                    <strong>Night Clicks</strong> —
+                    making it easy to explore each perspective of the sky through my
+                    lens.
+                </p>
+            </div>
+        </section>
+    </header>
+    <nav class="category-nav">
+        <ul>
+            <li><a href="#clouds">☁ Clouds</a></li>
+            <li><a href="#colorsky">🎨 Color Sky</a></li>
+            <li><a href="#sun">☀ Sun</a></li>
+            <li><a href="#sunset">🌃 Night Clicks</a></li>
+        </ul>
+    </nav>
+    <section class="gallery-section" id="clouds">
+        <div class="section-header">
+            <span>SKY COLLECTION</span>
+            <h2>Clouds</h2>
+            <p>
+                Floating sculptures shaped by the wind, bringing calm,
+                depth, and endless imagination to the sky.
+            </p>
+        </div>
+        <div class="gallery" id="cloudGallery"></div>
+    </section>
+    <section class="gallery-section" id="colorsky">
+        <div class="section-header">
+            <span>SKY COLLECTION</span>
+            <h2>Color Sky</h2>
+            <p>
+                Every shade above us paints a different emotion—
+                from soft morning blues to dramatic evening palettes.
+            </p>
+        </div>
+        <div class="gallery" id="colorGallery"></div>
+    </section>
+    <section class="gallery-section" id="sun">
+        <div class="section-header">
+            <span>SKY COLLECTION</span>
+            <h2>Sun</h2>
+            <p>
+                The source of every dawn, every shadow, and every golden ray that
+                breathes warmth into the world.
+            </p>
+        </div>
+        <div class="gallery" id="sunGallery"></div>
+    </section>
+    <section class="gallery-section" id="sunset">
+        <div class="section-header">
+            <span>SKY COLLECTION</span>
+            <h2>Night Clicks</h2>
+            <p>
+                A peaceful farewell painted across the horizon, where light slowly
+                melts into colors that words can never fully describe.
+            </p>
+        </div>
+        <div class="gallery" id="sunsetGallery"></div>
+    </section>
+    <div class="lightbox" id="lightbox">
+        <span class="close">&times;</span>
+        <a id="downloadBtn" download target="_blank">
+            ⬇ Download
+        </a>
+        <img id="preview">
+    </div>
+    <section class="contact">
+        <h2>Let's Connect</h2>
+        <p>
+            Whether you'd like to collaborate, inquire about prints,
+            or simply share your thoughts, I'd love to hear from you.
+        </p>
+        <div class="contact-links">
+            <a href="https://www.instagram.com/im_harshhaa/" target="_blank">
+                Instagram
+            </a>
+            <a href="mailto:vinjamuriharsha123@gmail.com">
+                Email
+            </a>
+            <a href="https://www.linkedin.com/in/harshavinjamuri/" target="_blank">
+                LinkedIn
+            </a>
+        </div>
+    </section>
+    <script>
+        const CLOUD_NAME = "dk7gnvr8h";
+        /* ===========================================
+           CLOUDS
+        =========================================== */
+        const cloudImages = [
+            // "image_public_id",
+        ];
+        /* ===========================================
+           COLOR SKY
+        =========================================== */
+        const colorSkyImages = [
+            // "image_public_id",
+             "IMG20240316183635_r1klbs",
+            "IMG20240316183707_r5yrzq",
+            "IMG20230826180451_btix4m",
+            "IMG20230514181546_hqdq29",
+            "IMG20231101180423_je8djo",
+            "IMG20230728191259_iqp3o0",
+            "IMG20230513183929_ckgulc",
+            "IMG20230513183904_ck9bwx",
+            "IMG20230513183857_kdx3tz",
+            "IMG20230113173155_hrtyef",
+            "IMG20230113173112_BURST005_x6xsxn",
+            "IMG20230113173044_jgu2py",
+            "3af731a2-45a1-446d-b2e4-bd23f07a5cee_ncsehr",
+            "IMG20220918183938_zv9cdw",
+            "IMG20220918184022_xdwv14",
+            "20230826180520607_zzede1",
+            "IMG20220916182746_lntjlc",
+            "IMG20260507181957_cv1f8v",
+            "IMG20260507181940_lupsm4",
+            "IMG20251122055414_un6hgz",
+            "IMG20251122055413_hdjtsj",
+            "IMG20251120062353_es7jrs",
+            "IMG20251120062341_gm3kxn",
+            "IMG20251120062334_arhe5h",
+            "IMG20251120061921_qa9irl",
+            "IMG20251120061557_ggiuyw",
+            "IMG20251023055247_bawdup",
+            "IMG20251023055244_a7j9y0",
+            "IMG20251021060915_zntrec",
+            "IMG20251021060909_hj7q9t",
+            "IMG20240520180343_uqqxc8",
+            "IMG20240520180336_x5lfsf",
+            "IMG20240520180308-EFFECTS_ea38lg",
+            "IMG20240519052329_dr3yf3",
+            "IMG20240519052305_j6mizx",
+            "IMG20240516183046_llcvea",
+            "IMG20240516182947_lpg05w",
+            "IMG20240516182920_rirn1j",
+            "IMG20240516182143_hm0myd",
+            "IMG20240516181942_kiaqtw",
+            "IMG20240516182052_jkxspt",
+            "IMG20240516182851_usfsd9",
+            "IMG20240516181933_rfo4w5",
+            "IMG20240516181807_zp1keh",
+            "IMG20240516181750_rr5imb",
+            "IMG20251023054911_tslce4",
+            "IMG20230406185315_o1djne"
+        ];
+        /* ===========================================
+           SUN
+        =========================================== */
+        const sunImages = [
+            // "image_public_id",
+            "IMG20260429173328_agl5ih",
+            "IMG20251225164719_xsvlne",
+            "IMG20251115062654_xdvupy",
+            "IMG20251025061228_gvkku5",
+            "IMG20251021061110_fxepmv",
+            "IMG20251020060741_mqrpwa",
+            "IMG20251020060711_ri0z5c",
+            "IMG20250617183338_mdcqc6",
+            "IMG20250503174355_hvfs87",
+            "IMG20250503173916_apyil1",
+            "IMG20250503173725_gt5q9b",
+            "IMG20250414171537_fev3hw",
+            "IMG20250117161655_xr7i3l",
+            "IMG20250115080047_dwplye",
+            "IMG20241231174337_wwk978",
+            "IMG20241231165206_cfsdyz",
+            "IMG20241007170739_spelf8",
+            "IMG20241007170431_sv6z8j",
+            "IMG20241007170028_sf6y4t",
+            "IMG20241002162532_vu2dtt",
+            "IMG20240704180638_mv0rc2",
+            "IMG20240604182351_tgac76",
+            "IMG20240604182112_f38md5",
+            "IMG20240604182110_hwv0y7",
+            "IMG20240316175214_aof3bl",
+            "IMG20240315175617_pquc9u",
+            "IMG20240315175524_wsffrc",
+            "IMG20240126170129_o9lpsk",
+            "IMG20231225065447_yf1ucg",
+            "IMG20231001173119_mxmmx3",
+            "IMG20230713182023_sui9nu",
+            "IMG20230703091748_uz9imx",
+            "IMG20230701183904_qj03lz",
+            "IMG20230701182530_vmrsfm",
+            "IMG20230601173759_fp7vft",
+            "IMG20230531180546_hzjxch",
+            "IMG20230531180502_xs3rc2",
+            "IMG20230531180245_e7h0n5",
+            "IMG20230531175754_jdwhji",
+            "IMG20230531175749_y2jqig",
+            "IMG20230531175710_uq23bs",
+            "IMG20230531172939_rtqveu",
+            "IMG20230531172534_tbcehg",
+            "IMG20230531172500_sveto9",
+            "IMG20230531171358_kiw0k7",
+            "IMG20230531171337_p5mmsn",
+            "IMG20230515174604_apryyx",
+            "IMG20230515174730_eh06g5",
+            "IMG20230128073331_ysxqxp",
+            "IMG-20241008-WA0011_gerhg8",
+            "9850061b-6409-409e-82fd-9a93708c5414_kv4tva",
+            "369f9a7e-7e0c-4018-a69d-6eb03968a85f_pnbauq",
+        ];
+        /* ===========================================
+           SUNSET
+        =========================================== */
+        const sunsetImages = [
+            // "image_public_id",
+            "IMG20240609191221_kxohxp",
+            "IMG20240608190644_eeqlpk",
+            "IMG20240608190411_skl6vg",
+            "IMG20240608190040_xq1jbp",
+            "IMG20240608190024_fmpmvd",
+            "IMG20240518185627_czb0c4",
+            "IMG20240518184707_ycrdj3",
+            "IMG20240518180318_bksrnq",
+            "IMG20240517191543_x9gudj",
+            "IMG20240517191414_febsut",
+            "IMG20240517190908_lyzxqr",
+            "IMG20240517190901_q6wfqz",
+            "IMG20240510185235_hw5nqh",
+            "IMG20240315185913_q2gif7",
+            "IMG20240213184927_qkjwfy",
+            "IMG20231223185005_cu0ic5",
+            "IMG20231027233520_a2mmey",
+            "IMG20230929204903_m0se6u",
+            "IMG20230929204856_foceha",
+            "IMG20230831003305_xs4cdx",
+            "IMG20230828185049_t3xim1",
+            "IMG20230715185139_hfrhg0",
+            "IMG20230714191311_udbysi",
+            "IMG20230701214245_ulvnll",
+            "IMG20230701214221_mjaxwq",
+            "IMG20230605214627_tckwbs",
+            "IMG20230605212829_blklyl",
+            "IMG20230605211041_qieal4",
+            "IMG20230601173650_pexduv",
+            "IMG20230523183940_1_zby8fj",
+            "IMG20230506184519_vm4ef7",
+            "IMG20230412232722_qtvyi7",
+            "IMG20230412232528_foz2sf",
+            "IMG20230412231707_o9pjw1",
+            "IMG20230408201449_ctyxsv",
+            "IMG20230408201337_ywruqp",
+            "IMG20230405194408_zkua7e",
+            "IMG20230405194113_nheoct",
+            "IMG20230405194026_tpwkdb",
+            "IMG20230405194000_vcznzc",
+            "IMG20230405193901_kwkwck",
+            "IMG20230330190424_ylsxu6",
+            "IMG20230330190054_hq5fwx",
+            "IMG20230330190019_pufdpr",
+            "IMG20230330185849_vau5xg",
+            "IMG20230330185803_badci5",
+            "IMG20230330185538_l3x3ge",
+            "IMG20230330185504_zpsmdh",
+            "IMG20230330185122_aun96u",
+            "EFFECTS_1_jnqpfd",
+            "IMG20230330185155_vl8l1q",
+            "16f123f7-ca00-44bc-a56f-845ef791129b_k174wc",
+            "7fb9a13a-e268-45db-89de-747d0ec24130_myg1tr",
+        ];
+        let allImages = [];
+        const galleryMap = {};
+        const galleryContainers = {
+            cloudGallery: document.getElementById("cloudGallery"),
+            colorGallery: document.getElementById("colorGallery"),
+            sunGallery: document.getElementById("sunGallery"),
+            sunsetGallery: document.getElementById("sunsetGallery")
+        };
+        const lightbox = document.getElementById("lightbox");
+        const preview = document.getElementById("preview");
+        const downloadBtn = document.getElementById("downloadBtn");
+        let current = 0;
+        function imageURL(id) {
+            return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/${id}.jpg`;
+        }
+        function renderGallery(images, containerId) {
+            const container = galleryContainers[containerId];
+            images.forEach(id => {
+                const index = allImages.length;
+                allImages.push(id);
+                galleryMap[id] = index;
+                const card = document.createElement("div");
+                card.className = "card";
+                const img = new Image();
+                img.loading = "lazy";
+                img.src = imageURL(id);
+                img.onload = () => img.style.opacity = 1;
+                img.onerror = () => card.remove();
+                card.appendChild(img);
+                card.onclick = () => open(index);
+                container.appendChild(card);
+            });
+        }
+        renderGallery(cloudImages, "cloudGallery");
+        renderGallery(colorSkyImages, "colorGallery");
+        renderGallery(sunImages, "sunGallery");
+        renderGallery(sunsetImages, "sunsetGallery");
+        function open(index) {
+            current = index;
+            showImage();
+            lightbox.classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+        function showImage() {
+            const src = imageURL(allImages[current]);
+            preview.src = src;
+            downloadBtn.href = src;
+        }
+        function closeViewer() {
+            lightbox.classList.remove("active");
+            document.body.style.overflow = "";
+        }
+        function next() {
+            current = (current + 1) % allImages.length;
+            showImage();
+        }
+        function prev() {
+            current = (current - 1 + allImages.length) % allImages.length;
+            showImage();
+        }
+        document.querySelector(".close").onclick = closeViewer;
+        lightbox.onclick = (e) => {
+            if (e.target === lightbox)
+                closeViewer();
+        };
+        document.addEventListener("keydown", (e) => {
+            if (!lightbox.classList.contains("active"))
+                return;
+            if (e.key === "ArrowRight")
+                next();
+            else if (e.key === "ArrowLeft")
+                prev();
+            else if (e.key === "Escape")
+                closeViewer();
+        });
+    </script>
+</body>
+</html>
