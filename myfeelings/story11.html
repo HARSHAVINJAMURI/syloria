@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>A Cup of Love | Syloria</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+
+            font-family:"Outfit",sans-serif;
+
+            background:#0b0b10;
+
+            color:#f5f5f5;
+
+            overflow-x:hidden;
+
+            min-height:100vh;
+
+        }
+
+
+        /* =========================================================
+           BACKGROUND
+        ========================================================= */
+
+        body::before{
+
+            content:"";
+
+            position:fixed;
+
+            inset:0;
+
+            z-index:-2;
+
+            background:
+
+            radial-gradient(
+                circle at 10% 10%,
+                rgba(255,120,120,.08),
+                transparent 28%
+            ),
+
+            radial-gradient(
+                circle at 85% 15%,
+                rgba(255,208,120,.08),
+                transparent 35%
+            ),
+
+            radial-gradient(
+                circle at 50% 90%,
+                rgba(255,180,108,.045),
+                transparent 40%
+            ),
+
+            #0b0b10;
+
+        }
+
+
+        /* =========================================================
+           SUBTLE GRAIN
+        ========================================================= */
+
+        body::after{
+
+            content:"";
+
+            position:fixed;
+
+            inset:0;
+
+            pointer-events:none;
+
+            z-index:-1;
+
+            opacity:.25;
+
+            background-image:
+            radial-gradient(
+                rgba(255,255,255,.04) 1px,
+                transparent 1px
+            );
+
+            background-size:6px 6px;
+
+        }
+
+
+        /* =========================================================
+           MAIN CONTAINER
+        ========================================================= */
+
+        .container{
+
+            width:min(1050px,92%);
+
+            margin:0 auto;
+
+            padding:80px 0 120px;
+
+        }
+
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        header{
+
+            text-align:center;
+
+            margin-bottom:55px;
+
+        }
+
+        .story-number{
+
+            font-size:12px;
+
+            letter-spacing:5px;
+
+            text-transform:uppercase;
+
+            color:#ffbf69;
+
+            margin-bottom:20px;
+
+        }
+
+        header h1{
+
+            font-family:"Cinzel Decorative",serif;
+
+            font-size:58px;
+
+            font-weight:600;
+
+            line-height:1.15;
+
+            color:#ffe2aa;
+
+            letter-spacing:2px;
+
+        }
+
+        header h3{
+
+            margin-top:22px;
+
+            font-family:"Cormorant Garamond",serif;
+
+            font-size:30px;
+
+            font-weight:400;
+
+            font-style:italic;
+
+            color:#d8d8d8;
+
+        }
+
+
+        /* =========================================================
+           STORY IMAGE
+        ========================================================= */
+
+        .story-image{
+
+            width:min(850px,92%);
+
+            margin:0 auto 48px;
+
+            text-align:center;
+
+        }
+
+        .story-image img{
+
+            width:100%;
+
+            max-height:520px;
+
+            object-fit:cover;
+
+            display:block;
+
+            border-radius:24px;
+
+            border:1px solid rgba(255,255,255,.08);
+
+            box-shadow:
+                0 25px 70px rgba(0,0,0,.4);
+
+            transition:.5s ease;
+
+        }
+
+        .story-image img:hover{
+
+            transform:
+                translateY(-7px)
+                scale(1.01);
+
+            border-color:#ffb96a;
+
+            box-shadow:
+                0 35px 90px rgba(255,191,105,.12);
+
+        }
+
+
+        /* =========================================================
+           STORY CARD
+        ========================================================= */
+
+        .story{
+
+            background:
+                rgba(255,255,255,.03);
+
+            border:
+
+                1px solid
+                rgba(255,255,255,.08);
+
+            border-radius:24px;
+
+            padding:58px;
+
+            backdrop-filter:blur(14px);
+
+            -webkit-backdrop-filter:blur(14px);
+
+            transition:.4s ease;
+
+        }
+
+        .story:hover{
+
+            border-color:#ffb96a;
+
+            box-shadow:
+                0 25px 80px
+                rgba(0,0,0,.35);
+
+        }
+
+
+        /* =========================================================
+           STORY TEXT
+        ========================================================= */
+
+        .story p{
+
+            font-family:"Cormorant Garamond",serif;
+
+            font-size:22px;
+
+            line-height:1.8;
+
+            color:#ededed;
+
+            margin-bottom:27px;
+
+            text-align:left;
+
+        }
+
+        .story p:last-child{
+
+            margin-bottom:0;
+
+        }
+
+
+        /* =========================================================
+           EMPHASIS
+        ========================================================= */
+
+        .story strong{
+
+            color:#ffd166;
+
+            font-weight:600;
+
+        }
+
+
+        /* =========================================================
+           DIVIDER
+        ========================================================= */
+
+        .divider{
+
+            text-align:center;
+
+            margin:48px 0;
+
+            color:#777;
+
+            letter-spacing:2px;
+
+        }
+
+
+        /* =========================================================
+           HOME BUTTON
+        ========================================================= */
+
+        .home{
+
+            position:fixed;
+
+            right:25px;
+
+            bottom:25px;
+
+            z-index:100;
+
+            padding:14px 28px;
+
+            border-radius:40px;
+
+            background:#ffbf69;
+
+            color:#111;
+
+            text-decoration:none;
+
+            font-weight:600;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0,0,0,.3);
+
+            transition:.35s ease;
+
+        }
+
+        .home:hover{
+
+            background:#fff;
+
+            transform:translateY(-5px);
+
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media(max-width:768px){
+
+            .container{
+
+                padding:
+                    55px 0
+                    100px;
+
+            }
+
+            header{
+
+                margin-bottom:40px;
+
+            }
+
+            header h1{
+
+                font-size:38px;
+
+                letter-spacing:1px;
+
+            }
+
+            header h3{
+
+                font-size:24px;
+
+                line-height:1.4;
+
+            }
+
+            .story{
+
+                padding:32px 25px;
+
+                border-radius:20px;
+
+            }
+
+            .story p{
+
+                font-size:19px;
+
+                line-height:1.75;
+
+            }
+
+            .story-image{
+
+                width:100%;
+
+                margin-bottom:35px;
+
+            }
+
+            .story-image img{
+
+                border-radius:20px;
+
+                max-height:400px;
+
+            }
+
+            .home{
+
+                right:18px;
+
+                bottom:18px;
+
+                padding:12px 22px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header>
+
+        <div class="story-number">
+            STORY — 11
+        </div>
+
+        <h1>
+            A Cup of Love.
+        </h1>
+
+        <h3>
+            Some love stories are never spoken,
+            yet somehow they are remembered forever.
+        </h3>
+
+    </header>
+
+
+    <!-- =====================================================
+         STORY IMAGE
+    ====================================================== -->
+
+    <div class="story-image">
+
+        <img
+            src="image11.png"
+            alt="A Cup of Love">
+
+    </div>
+
+
+    <!-- =====================================================
+         STORY
+    ====================================================== -->
+
+    <article class="story">
+
+
+        <p>
+            A he — a young gem in his college days.
+        </p>
+
+        <p>
+            There was a girl.
+        </p>
+
+        <p>
+            A lovely rose.
+        </p>
+
+        <p>
+            Very, very, very lovely.
+        </p>
+
+        <p>
+            It was love at first sight.
+        </p>
+
+        <p>
+            To him, she was the one who could never be replaced by anyone.
+        </p>
+
+        <p>
+            His first love.
+        </p>
+
+        <p>
+            They were in same class, same subject.
+        </p>
+
+        <p>
+            Slowly, they became friends. Then closer friends, Bestfriends And, without either of them noticing when it happened, they became an important part of each other's lives.
+        </p>
+
+        <p>
+            He had decided to propose her.
+        </p>
+
+        <p>
+            One day, he invited her to dinner to propose.
+        </p>
+
+        <p>
+            He had decided that day was the day he would finally tell her what was in his heart.
+        </p>
+
+        <p>
+            But, surprisingly, she was coming with the same intention.
+        </p>
+
+        <p>
+            She was coming to propose to him.
+        </p>
+
+        <p>
+            She had brought a gift with her.
+        </p>
+
+        <p>
+            A beautiful cup—with a quiet elegance that made it feel almost like it had been made to hold something precious. It was simple, yet there was something about it that made it unforgettable, as if a little piece of her heart had been shaped into it.
+        </p>
+
+        <p>
+            That cup was her way of saying what her lips had not yet said.
+        </p>
+
+        <p>
+            It was her proposal.
+        </p>
+        <p>
+            Before either of them could express their love, she was hit by a car.
+        </p>
+
+        <p>
+            She died.
+        </p>
+
+        <p>
+            And only one thing that remained -- a CUP.
+        </p>
+
+        <p>
+            It wasn't just a cup.
+        </p>
+
+        <p>
+            It was her love. Her unspoken words.
+        </p>
+
+        <p>
+            It was the last thing she left for him.
+        </p>
+
+        <p>
+            The proposal she never got to say.
+        </p>
+
+        <p>
+            After a long gap...
+        </p>
+
+        <div class="divider">
+            ---
+        </div>
+
+        <p>
+            Years passed, he makes him busy to forgot that.
+        </p>
+
+        <p>
+            Then, one day, a girl joined his office.
+        </p>
+
+        <p>
+            There was something strange about her.
+        </p>
+
+        <p>
+            She looks exactly like her—not by face, but her attitude, her style, the way she spoke, she smiled was the same.
+        </p>
+
+        <p>
+            Something about her felt strangely familiar.
+        </p>
+
+        <p>
+            One day, he walked up to her and asked, “Roses or tulips?”
+        </p>
+
+        <p>
+            She looked at him, confused. “What?”
+        </p>
+
+        <p>
+            “Roses or tulips?”
+        </p>
+
+        <p>
+            “Roses.”
+        </p>
+
+        <p>
+            “Why?”
+        </p>
+
+        <p>
+            She smiled. “They are lovely.”
+        </p>
+
+        <p>
+            For a moment, he went silent. He remembered her.
+        </p>
+
+        <p>
+            "Roses. They are lovely. " The same answer, The same feeling.
+        </p>
+
+        <p>
+            He smiled quietly, a drop of water from his eyes.
+        </p>
+
+        <p>
+            Days passed,
+        </p>
+
+        <p>
+            They became friends.
+        </p>
+
+        <p>
+            Then closer.
+        </p>
+
+        <p>
+            They started spending more time together.
+        </p>
+
+        <p>
+            She was impressed by him.
+        </p>
+
+        <p>
+            He began to like her.
+        </p>
+
+        <p>
+            And, slowly, she fell in love with him.
+        </p>
+
+        <p>
+            Neither of them said it.
+        </p>
+
+        <p>
+            Not yet.
+        </p>
+
+        <div class="divider">
+            ---
+        </div>
+
+        <p>
+            One long day at the office, they were walking together.
+        </p>
+
+        <p>
+            An unknown person came from behind and accidentally dashed into him.
+        </p>
+
+        <p>
+            The cup he was carrying fell from his hand.
+        </p>
+
+        <p>
+            It broke.
+        </p>
+
+        <p>
+            He stood still. He looked at the pieces.
+        </p>
+
+        <p>
+            His face remained calm, but something inside him broke again.
+        </p>
+
+        <p>
+            “That was my favourite,” he said softly.
+        </p>
+
+        <p>
+            He didn't expressed how much it hurt.
+        </p>
+
+        <p>
+            Later that day, they had a long conversation.
+        </p>
+
+        <p>
+            He told her about his past, about his college love,
+        </p>
+
+        <p>
+            about the Girl -- the Rose's 🌹
+        </p>
+
+        <p>
+            The dinner, the cup,
+        </p>
+
+        <p>
+            And about the day he lost her.
+        </p>
+
+        <p>
+            He spoke about everything he had kept inside for years.
+        </p>
+
+        <p>
+            After that he simply smiled and left.
+        </p>
+
+        <div class="divider">
+            ---
+        </div>
+
+        <p>
+            A few days later, it was a special day.
+        </p>
+
+        <p>
+            His Birthday, She came to him with a gift.
+        </p>
+
+        <p>
+            " Happy birthday, Make a wish.”
+        </p>
+
+        <p>
+            He closed his eyes. He made a wish.
+        </p>
+
+        <p>
+            She smiled. “This is your gift. Open it.”
+        </p>
+
+        <p>
+            He opened the box, And froze.
+        </p>
+
+        <p>
+            Inside was a cup --- The same colour, same shape, same size.
+        </p>
+
+        <p>
+            It looked exactly like the cup he had lost.
+        </p>
+
+        <p>
+            For a moment, he couldn't speak.
+        </p>
+
+        <p>
+            He looked at the cup.
+        </p>
+
+        <p>
+            Then at her, smiled, And hugged her.
+        </p>
+
+        <p>
+            That hug said everything he couldn't put into words.
+        </p>
+
+        <p>
+            He proposed, And she accepted.
+        </p>
+
+        <p>
+            He doesn't know that,
+        </p>
+
+        <p>
+            She had collected the broken pieces, Every piece she could find.
+        </p>
+
+        <p>
+            She tried to put them together again, But some pieces were missing.
+        </p>
+
+        <p>
+            Some pieces could never be found, So she took pieces from her own favourite cup.
+        </p>
+
+        <p>
+            She shaped them to fit, coloured them in the same shade.
+        </p>
+
+        <p>
+            And slowly, carefully, lovingly— she made the cup whole again.
+        </p>
+
+        <p>
+            Not exactly the same.But somehow, more beautiful.
+        </p>
+
+        <p>
+            Because it carried two stories now.
+        </p>
+
+        <p>
+            His past,
+        </p>
+
+        <p>
+            And her present.
+        </p>
+
+        <div class="divider">
+            ---
+        </div>
+
+        <p>
+            At the end
+        </p>
+
+        <p>
+            The first girl wanted to express her love through the cup, but she never got the chance to say it.
+        </p>
+
+        <p>
+            Yet he received her love through that cup.
+        </p>
+
+        <p>
+            Years later, the cup broke—and with it, it felt as though a part of that love had broken too.
+        </p>
+
+        <p>
+            But the present girl picked up those broken pieces.
+        </p>
+
+        <p>
+            She added pieces of her own love, joined them together, and gave the cup back to him.
+        </p>
+
+        <p>
+            She didn't try to bring the past back, She created something new from what remained.
+        </p>
+
+        <p>
+            Love is not about loving someone only for their beautiful pieces,
+        </p>
+
+        <p>
+            Sometimes, love is about accepting the broken, embracing every piece, and making it beautiful together.
+        </p>
+
+        <p>
+            Love is about loving their flaws, their mistakes, their likes and dislikes, their madness and innocence, their laughter and anger—and everything that makes them who they are.
+        </p>
+
+        <p>
+            Because when you truly love someone,
+        </p>
+
+        <p>
+            you don't love them with a reason, you'll become the reason for their happiness.
+        </p>
+
+        <p>
+            The First Chapter -- the First love ended when the cup was broken,
+        </p>
+
+        <p>
+            The Second Chapter -- the New Love begins when she gifted the cup with Reassembling the broken pieces
+        </p>
+
+        <p>
+            -- by an unknown person (who broke the cup).
+        </p>
+
+    </article>
+
+</div>
+
+<a href="index.html" class="home">
+    ← Home
+</a>
+
+</body>
+
+</html>
